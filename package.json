@@ -1,5 +1,5 @@
 {
-  "name": "callums-portfolio",
+  "name": "portfolio-page",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,9 +7,17 @@
     "start": "concurrently \"cd backend && npm run start\" \"cd client && yarn start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/callummclu/portfolio-page.git"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/callummclu/portfolio-page/issues"
+  },
+  "homepage": "https://github.com/callummclu/portfolio-page#readme",
   "dependencies": {
     "concurrently": "^7.0.0"
   }
