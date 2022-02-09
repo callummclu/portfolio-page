@@ -16,7 +16,14 @@ function Dropdown() {
   return (
     <div className="dropdown-menu">
       <p>Last login: {day_arr[day-1]} {mon_arr[mon]}  {dateday} {h}:{m}:{s} on ttys001</p>
-      <p>callummcluskey100@gmail.com ~ % curl <a href="https://github.com/callummclu">Github</a></p>
+
+      <p> ~ % whoami </p>
+      <p>  <a href="">callummcluskey100@gmail.com </a></p>
+
+      <p> ~ % curl Github</p>
+      <p>  <a href="https://github.com/callummclu">https://github.com/callummclu</a> </p>
+      <p> ~ % ls </p>
+      <p> <a href="">/Projects</a> <a href="">/Contact</a> <a href="">/Studies</a></p>
     </div>
   );
 }

@@ -13,6 +13,7 @@ function PgridItems(props) {
 		pGrid.push(<Pbox title={pItems[i].title}
 										 tags={pItems[i].tags}
 										 image={pItems[i].image}
+										 content={pItems[i].content}
 										 />)
 	}
 

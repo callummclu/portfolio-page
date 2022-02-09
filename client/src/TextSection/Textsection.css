@@ -1,12 +1,16 @@
 .text-section{
 	margin: 0 auto;
 	width: 80%;
-	background: lightgray;
+	background: #6B5B95;
 	height: auto;
 	padding: 25px;
+	padding-top: 150px;
 	font-family: Courier, monospace;
 	padding-bottom: 50px;
 	margin-bottom: 50px;
+	border-radius: 5px;
+	border: 1px solid white;
+	color: rgb(220,220,220);
 }
 
 .text-section:first-child{
@@ -23,7 +27,24 @@ hr{
 
 @media screen and (max-width: 550px){
 	.text-section{
-		width: 115%;
+		width: 80%;
 
 	}
+}
+
+@keyframes blinkCursor{
+	0%{border-right: 3px solid transparent;}
+	25%{border-right: 3px solid transparent;}
+	26%{border-right: 3px solid rgb(100,100,100);}
+	35%{border-right: 3px solid rgb(100,100,100);}
+	36%%{border-right: 3px solid transparent;}
+	70%{border-right: 3px solid transparent;}
+	71%{border-right: 3px solid rgb(100,100,100);}
+}
+
+.text-section>p>span{
+	border-right: 3px solid black;
+	padding-top: 2px;
+	padding-bottom: -12px;
+	animation: blinkCursor 3s infinite;
 }

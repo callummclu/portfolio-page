@@ -1,4 +1,12 @@
+:root{
+  --verydark-purple: #14071D;
+  --dark-purple: #420F68;
+  --mid-purple: #791BC0;
+  --light-purple: #9A3AE3;
+}
+
 body {
   margin: 0;
   font-family: helvetica;
+  background: rgb(220, 220, 220) !important;
 }

@@ -12,10 +12,10 @@ body{
   text-align: left;
   width: 500px; height: 350px;
   overflow: hidden;
-  border-radius: 15px;
   font-family: roboto;
   font-size: 18px;
   border: 0.5px solid white;
+  border-radius: 5px;
   box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.22);
   display: grid;
   grid-template: 1fr / 1fr;

@@ -4,7 +4,7 @@
 	top: 0; left: 0;
 	background: transparent;
 	position: fixed;
-	z-index: 100;
+	z-index: 1005;
 
 }
 
@@ -12,16 +12,17 @@
 	font-family: Courier, monospace;
 	padding-top: 25px;
 	padding-left: 25px;
-	color: rgb(25,25,25);
+	color: rgb(35,35,35);
 	font-size: 15px;
 }
 
 .Nav>p>span{
 	padding: 10px;
 	color: white;
-	background: rgb(25,25,25);
+	background: rgb(35,35,35);
 	cursor: pointer;
 	border: 1px solid white;
+	border-bottom: none;
 
   -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */
@@ -45,7 +46,7 @@
 span>span>div{
 	display: inline-block;
 	width: 25px;
-	background: rgb(25,25,25);
+	background: rgb(35,35,35);
 	height: 25px;
 	position: absolute;
 	margin-top: -3px;
@@ -59,7 +60,7 @@ span>span>div{
 }
 
 .Nav>p>span>span:hover{
-	color: black;
+	color: #9A3AE3;
 }
 
 .Nav>p>span>span:last-child{
