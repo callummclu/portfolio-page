@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+body{
+  background: rgb(240,240,240)
+}
+
+.parent-container{
+  display: inline-block;
+}
+
+.container{
+  text-align: left;
+  width: 500px; height: 350px;
+  overflow: hidden;
+  border-radius: 20px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-family: roboto;
+  font-size: 18px;
+  border: 0.5px solid white;
+  box-shadow: 5px 5px 15px 5px rgba(0,0,0,0.22);
+  display: grid;
+  grid-template: 1fr / 1fr;
+  place-items: center;
+  margin:20px;
+}
+
+.container>*{
+  grid-column: 1 / 1;
+  grid-row: 1 / 1;
+}
+
+.img-container{
+  z-index: 2;
+  width: 100%;
+  height: 100%; 
+  background: darkgray;
+  background-size:cover;
+}
+
+.text-container{
+  width:100%;
+  height: 40%;
+  margin-top: 48%;
+  background:rgba(250,250,250,0.9);
+}
+
+.text-container>div{
+  padding: 20px;
+  margin-bottom:-5px;
+  color:rgba(25,25,25);
+}
+
+.text-container>div>span:first-child{
+  font-size: 20px;
+  padding-right:10px; padding-left: 10px;
+}
+
+.text-container>div>span:not(:first-child){
+  color:gray;
+}
+
+
+.tags{
+  padding-left: 20px;
+}
+
+.tags>div{
+  font-size: 12px;
+  margin-left: 10px;
+  display:inline-block;
+  padding:5px;
+  margin-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  background:darkgray;
+  color:white;
+  
+}
+
+@media screen and (max-width: 550px){
+  .container{
+    transform: scale(0.8);
+    margin-bottom: -40px;
+  }
+}

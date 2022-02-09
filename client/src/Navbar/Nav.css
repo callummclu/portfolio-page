@@ -1,0 +1,66 @@
+.Nav{
+	width: 225px;
+	height: 100px;
+	top: 0; left: 0;
+	background: transparent;
+	position: fixed;
+	z-index: 100;
+
+}
+
+.Nav>p{
+	font-family: Courier, monospace;
+	padding-top: 25px;
+	padding-left: 25px;
+	color: rgb(25,25,25);
+	font-size: 15px;
+}
+
+.Nav>p>span{
+	padding: 10px;
+	color: white;
+	background: rgb(25,25,25);
+	cursor: cursor;
+	border: 1px solid white;
+
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+
+}
+
+@keyframes blinkingCursor{
+	0%{
+		border-bottom: 2px solid transparent;
+	}
+	100%{
+		
+		border-bottom: 2px solid white;
+	}
+}
+
+.Nav>p>span>span{
+	transition-duration: 0.5s;
+}
+
+.Nav>p>span>span:hover{
+	color: black;
+}
+
+.Nav>p>span>span:last-child{
+	animation: blinkingCursor 1s linear infinite alternate;
+	color: transparent;
+}
+
+.Nav-dropdown{
+	width: 50px; height: 50px;
+	background: black;
+	position: fixed;
+	top: 100px;
+	opacity: 0;
+}

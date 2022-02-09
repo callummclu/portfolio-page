@@ -1,0 +1,18 @@
+.text-section{
+	margin: 150px auto;
+	width: 80%;
+	background: lightgray;
+	height: auto;
+	padding: 25px;
+	font-family: Courier, monospace;
+	padding-bottom: 50px;
+	margin-bottom: 50px;
+}
+
+hr{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	width: 80%;
+	border:0.5px solid black;
+	border-radius: 1px;
+}
