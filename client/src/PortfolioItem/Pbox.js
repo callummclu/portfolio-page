@@ -1,5 +1,7 @@
 import React from 'react'
 import './Pbox.css'
+import ReactDOM from 'react-dom'
+
 
 function Ptag(props){
 	const tag = props.tag
@@ -28,7 +30,7 @@ function Pbox(props) {
 	const title = props.title
 	const img_url = props.image
   return (
-  	<div className="parent-container">
+  	<div className="parent-container" onClick={()=>''}>
     <div className="container">
     	<div className="img-container" style={{backgroundImage: `url(${img_url})`}}>
     	<div className="text-container">

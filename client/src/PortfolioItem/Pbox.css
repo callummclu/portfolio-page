@@ -12,9 +12,7 @@ body{
   text-align: left;
   width: 500px; height: 350px;
   overflow: hidden;
-  border-radius: 20px;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-radius: 15px;
   font-family: roboto;
   font-size: 18px;
   border: 0.5px solid white;
@@ -79,8 +77,13 @@ body{
   
 }
 
+.tags>div:first-child{
+  margin-left: auto;
+}
+
 @media screen and (max-width: 550px){
   .container{
+    padding: 0;
     transform: scale(0.8);
     margin-bottom: -40px;
   }

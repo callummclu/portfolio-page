@@ -1,5 +1,5 @@
 .text-section{
-	margin: 150px auto;
+	margin: 0 auto;
 	width: 80%;
 	background: lightgray;
 	height: auto;
@@ -9,10 +9,21 @@
 	margin-bottom: 50px;
 }
 
+.text-section:first-child{
+	margin-top: 150px;
+}
+
 hr{
 	margin-top: 30px;
 	margin-bottom: 30px;
 	width: 80%;
 	border:0.5px solid black;
 	border-radius: 1px;
+}
+
+@media screen and (max-width: 550px){
+	.text-section{
+		width: 115%;
+
+	}
 }

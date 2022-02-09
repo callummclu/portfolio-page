@@ -1,0 +1,40 @@
+.dropdown-menu{
+	width: 350px;
+	top: 65px;
+	left: 25px;
+	height: 60px;
+	background: rgb(25,25,25);
+	z-index: 1000;
+	border: 1px solid white;
+	border-top: none;
+	position: fixed;
+	font-family: Courier, monospace;
+}
+
+.dropdown-menu>p{
+	font-size: 11px;
+	padding-left: 10px;
+	color: lightgray;
+}
+
+.dropdown-menu>p>a{
+	font-size: 11px;
+	color: white;
+	text-decoration: none;
+	text-decoration: bold;
+
+}
+
+.dropdown-menu>p>a:visited{
+	font-size: 11px;
+	color: lightgreen;
+
+}
+
+@media screen and (max-width: 380px){
+	.dropdown-menu{
+		width: 90%;
+		height: auto;
+	}
+}
+

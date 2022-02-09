@@ -1,5 +1,5 @@
 .Nav{
-	width: 225px;
+	width: 250px;
 	height: 100px;
 	top: 0; left: 0;
 	background: transparent;
@@ -20,7 +20,7 @@
 	padding: 10px;
 	color: white;
 	background: rgb(25,25,25);
-	cursor: cursor;
+	cursor: pointer;
 	border: 1px solid white;
 
   -webkit-touch-callout: none; /* iOS Safari */
@@ -30,8 +30,6 @@
         -ms-user-select: none; /* Internet Explorer/Edge */
             user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
-
-
 }
 
 @keyframes blinkingCursor{
@@ -42,6 +40,18 @@
 		
 		border-bottom: 2px solid white;
 	}
+}
+
+span>span>div{
+	display: inline-block;
+	width: 25px;
+	background: rgb(25,25,25);
+	height: 25px;
+	position: absolute;
+	margin-top: -3px;
+	margin-left: -1px;
+	padding-left: 5px;
+	transform: scaleX(0.8);
 }
 
 .Nav>p>span>span{

@@ -6,11 +6,14 @@ function Textsection(props) {
   const para = props.content
 
   return (
-    <div className="text-section">
-      <h3>{Heading}</h3>
-      <p>{para}</p>
+      
 
-    </div>
+      <div className="text-section">
+
+        <h3>{Heading}</h3>
+        <p>{para}</p>
+
+      </div>
   )
 }
 
