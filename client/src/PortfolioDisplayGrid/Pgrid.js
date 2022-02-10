@@ -1,6 +1,8 @@
 import React from 'react'
 import Pbox from '../PortfolioItem/Pbox'
 import './Pgrid.css'
+import Textsection from '../TextSection/Textsection'
+
 
 
 
@@ -14,6 +16,7 @@ function PgridItems(props) {
 										 tags={pItems[i].tags}
 										 image={pItems[i].image}
 										 content={pItems[i].content}
+										 page={pItems[i].page}
 										 />)
 	}
 
@@ -22,11 +25,14 @@ function PgridItems(props) {
 
 function Pgrid(props){
 	return(
+		<>
+
 		<div className="content-container">
 			<div className="grid-container">
 				<PgridItems boxArray={props.boxArray} />
 			</div>
 		</div>
+		</>
 	)
 }
 

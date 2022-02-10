@@ -2,11 +2,14 @@ import React from 'react'
 import './Pbox.css'
 import ReactDOM from 'react-dom'
 import Popup from '../PagePopup/Popup'
+import { BrowserRouter,Routes, Route, Link  } from 'react-router-dom';
+import slugify from 'react-slugify';
+
+
 
 
 function Ptag(props){
 	const tag = props.tag
-	const key = {tag}
 	return(
 		<div>
 			<span>
@@ -32,16 +35,20 @@ function Pbox(props) {
 	const img_url = props.image
 	const content = props.content
   const [show,toggleShow] = React.useState(true);
-
+  const slugified_title = slugify(title)
+  const page = props.page
   return (
-  	<>
+  		<>
   	<div className="parent-container">
     <div className="container">
     	<div className="img-container" style={{backgroundImage: `url(${img_url})`}}>
     	<div className="text-container">
 	    		<div>
 	    			<span>{title}</span>
-	    			<span><button onClick={()=>toggleShow(!show)}>more</button></span>
+
+	    			<span>
+	    				<Link to={slugified_title}>more</Link>
+	    			</span>
 	    			<div className="tags">
 	    				<Ptags tags={tags} />
 	    			</div>
@@ -50,8 +57,6 @@ function Pbox(props) {
     	</div>
     	</div>
     </div>
-    {!show && <><Popup tags={tags} title={title} content={content}/><button onClick={()=>toggleShow(!show)}>close</button></>}
-
     </>
   )
 }
