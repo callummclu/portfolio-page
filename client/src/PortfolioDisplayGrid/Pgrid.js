@@ -1,7 +1,6 @@
 import React from 'react'
 import Pbox from '../PortfolioItem/Pbox'
 import './Pgrid.css'
-import Textsection from '../TextSection/Textsection'
 
 
 

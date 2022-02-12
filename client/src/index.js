@@ -24,7 +24,7 @@ function Home(){
           <Link to="/contact"><button>Contact</button></Link>
         </div>
         </div>
-        <Textsection title=<h3>other projects</h3> content={otherPosts} />
+        <Textsection title=<h3>Some of my Projects</h3> content={otherPosts} />
 
       </div>
     </>
@@ -75,6 +75,7 @@ function Dropdown() {
   const day = date.getDay()
   const day_arr = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
   const dateday = date.getDate()
+  
 
   return (
 
