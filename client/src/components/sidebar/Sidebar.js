@@ -9,11 +9,9 @@ function Sidebar(props){
 	return(
 		<div className={toggle ? show : hide}>
 			<Link to="/" onClick={() => toggleSidebar(!toggle)}>Home</Link>
-			<br/>
-			<br/>
+			<br/><br/>
 			<Link to="portfolio" onClick={() => toggleSidebar(!toggle)}>Portfolio</Link>
-			<br/>
-			<br/>
+			<br/><br/>
 			<Link to="contact" onClick={() => toggleSidebar(!toggle)}>Contact</Link>
 		</div>
 	)

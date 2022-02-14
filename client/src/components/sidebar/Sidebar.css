@@ -14,7 +14,6 @@
 .sidebar.false{
 	width: 0px !important;
 }
-
 .sidebar.false>*{
 	display: none;
 }
@@ -22,7 +21,6 @@
 .sidebar.true{
 	width: 300px !important;
 }
-
 .sidebar.true>*{
 	display: block;
 }

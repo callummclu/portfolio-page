@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ReactDOM from 'react-dom'
 
 // Routing import
@@ -8,6 +8,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './Pages/Homepage/Home'
 import Portfolio from './Pages/PortfolioPage/Portfolio'
 import Contact from './Pages/ContactPage/Contact'
+import PortfolioItem from './Pages/PortfolioItem/PortfolioItem'
 
 // component imports
 import ScrollToTop from './ScrollToTop'
@@ -20,16 +21,17 @@ import './index.css'
 
 function App() {
   const [toggle, setToggle] = useState(false)
+
   return (
       <BrowserRouter>
         <Nav hamburgerToggle={[toggle,setToggle]}/>
-        <Sidebar show={toggle && "true"}/>
+        <Sidebar show={toggle}/>
           <ScrollToTop>
             <Routes> 
               <Route path="/" element={<Home />} />
-              <Route path="portfolio" element={<Portfolio />} />
+              <Route path="portfolio" element={<Portfolio />}  />
               <Route path="contact" element={<Contact />} />
-              <Route path="portfolio/:id" element={<></>} />
+              <Route path="portfolio/:id" element={<PortfolioItem/>} />
             </Routes>
           </ScrollToTop>
         <Footer />
@@ -41,7 +43,3 @@ ReactDOM.render(
   <App/>,
   document.getElementById('root')
 );
-
-
-
-
