@@ -1,6 +1,6 @@
 .sidebar{
 	height: 100vh;
-	z-index: 2;
+	z-index: 4;
 	position: fixed;
 	background: white;
 	transition-duration: 0.1s;

@@ -6,7 +6,7 @@
 	width: 80px;
 	height: var(--nav-height);
 	position: fixed;
-	z-index: 3;
+	z-index: 5;
 }
 
 .hamburgerButton {

@@ -1,0 +1,27 @@
+.TextContainer{
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	background: white;
+	margin: 10px auto;
+	min-width: 300px;
+}
+
+.TextContainer>*:first-child{
+	padding-top: 10px;
+}
+
+.TextContainer>*:last-child{
+	padding-bottom: 10px;
+}
+
+.TextContainer>*{
+	padding-left: 25px;
+	padding-right: 25px;
+	text-align: left;
+}
+
+@media screen and (max-width: 300px){
+	.TextContainer{
+		min-width: 200px;
+	}
+}

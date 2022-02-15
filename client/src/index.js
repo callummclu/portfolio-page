@@ -13,7 +13,6 @@ import PortfolioItem from './Pages/PortfolioItem/PortfolioItem'
 // component imports
 import ScrollToTop from './ScrollToTop'
 import Nav from './components/Navbar/Nav'
-import Footer from './components/Footer/Footer'
 import Sidebar from './components/sidebar/Sidebar'
 
 // general styling import
@@ -34,7 +33,6 @@ function App() {
               <Route path="portfolio/:id" element={<PortfolioItem/>} />
             </Routes>
           </ScrollToTop>
-        <Footer />
       </BrowserRouter>
   );
 }

@@ -1,0 +1,37 @@
+.portfolio-page a{
+	color: rgb(60,60,60);
+	text-decoration: none;
+}
+
+.portfolio-page a:hover{
+	color: rgba(100,100,100);
+}
+.portfolio-page h3{
+	text-align: center;
+}
+
+.portfolio-page h3+p{
+	color: rgb(200,200,200);
+	line-height: 0;
+	padding-left: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 12px;
+}
+
+
+.portfolio-page p+hr{
+	border: 0.5px solid darkgray;
+	width: 70%;
+
+}
+.tag-items>span:nth-child(1)::before{
+	content: " ";
+}
+.tag-items>*::before{
+	content: " - ";
+}
+
+.PortfolioListContainer{
+	text-align: center;
+}
