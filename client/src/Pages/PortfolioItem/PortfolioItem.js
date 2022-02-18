@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react'
 
+import {Helmet} from 'react-helmet';
 import { useParams } from "react-router-dom";
 import './PortfolioItem.css'
 
 import Container from '../../components/container/Container'
 import LoadingIcon from '../../components/LoadingCircle/LoadingIcon'
+import Banner from '../../components/Banner/Banner'
+import TextContainer from '../../components/textContainer/TextContainer'
+
 
 function PortfolioItem(props){
 
   const [project ,setProject] = useState([])
   const { id } = useParams();
-
-  console.log(project.title)
 
   useEffect(()=>{
    let fetchLink = `http://192.168.0.10:3001/portfolio/${id}`
@@ -22,22 +24,36 @@ function PortfolioItem(props){
       })
     },[id])
 
-  console.log(project.title)
 
+
+  let tags = project.tags
+  try {
+  let tagList = []
+  for (let i = 0; i<tags.length; i++){
+    tagList.push(<span className="tag">{tags[i]}</span>)
+  }
   const content = (
-    
-    <>
-    <h5>title</h5> <p>{project.title}</p>
-    <h5>slug_title</h5> <p>{project.slug_title}</p>
-    <h5>tags</h5><p>{project.tags}</p>
-    <h5>image</h5><p>{project.image}</p>
-    <h5>content</h5><p>{project.content}</p>
-    <h5>github</h5><p>{project.github}</p>
-    <h5>additionalImages</h5><p>{project.additionalImages}</p>
-    </>
+    <div>
+      <Helmet>
+        <style>{'body { background-color: red; }'}</style>
+      </Helmet>
+      <Banner />
+      <TextContainer content={<div><h1>{project.title}</h1><p>{tagList}</p></div>} />
+      <br/><br/>
+      <br/>
+      <TextContainer content={
+      <div>    
+        <p>{project.content}</p>
+        <h4>github</h4><p>{project.github}</p>
+        <p>{project.additionalImages}</p>
+      </div>
+    }/></div>
   )
   return (typeof project.title != "undefined") ?  <Container content={content} /> : <div className="centerIcon"><LoadingIcon /></div>
- 
+ }
+ catch(e){
+  return (<LoadingIcon/>)
+ }
 }
 
 export default PortfolioItem;

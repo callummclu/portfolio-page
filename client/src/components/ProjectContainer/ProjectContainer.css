@@ -12,7 +12,6 @@
   	overflow: hidden;
   	background: white;
   	box-shadow: 0px 0px 0px 1px lightgray;
-	transition-duration: 0.25s;
 
 }
 
@@ -28,7 +27,7 @@
 }
 
 .ProjectContainer:hover{
-	transform: scale(1.05);
+	transform: scale(1.005);
 }
 .ProjectContainer:active{
 	transform: scale(0.95);
@@ -45,6 +44,7 @@
 	}
 	.text p {
 		font-size: 4vw !important;
+
 	}
 	.text .tag {
 		font-size: 2vw !important;
@@ -65,9 +65,10 @@
 	position: absolute;
 	width: 100%;
 	bottom:  0;
+
 }
 
-.ProjectContainer .tag {
+.tag {
 	font-size: 12px;
 	color: rgb(180,180,180);
 }
@@ -84,4 +85,3 @@
 .tag:first-child::before{
 	content:"";
 }
-

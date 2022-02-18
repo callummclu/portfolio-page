@@ -3,7 +3,7 @@ let projects = [{
   title: "Piercing Portfolio",
   tags: ["Django","Python","SQLite3"],
   image: "https://i.imgur.com/O64lJel.png",
-  content: "",
+  content: "This site was made with the purpose of showing off the progress of an aspiring piercer",
   github:"https://github.com/callummclu/Jewellery-Portfolio",
   additionalImages:[],
           

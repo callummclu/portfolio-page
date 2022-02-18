@@ -1,6 +1,12 @@
 body {
   margin: 0;
-  font-family: helvetica;
+  font-family: 'helvetica', cursive;
   background: rgb(240, 240, 240) !important;
   color: rgb(60,60,60);
+}
+
+a {
+  text-decoration: none;
+  color: #77987C;
+
 }

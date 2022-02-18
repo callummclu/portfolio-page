@@ -4,6 +4,8 @@ import './PortfolioPage.css'
 import TextContainer from '../../components/textContainer/TextContainer'
 import ProjectContainer from '../../components/ProjectContainer/ProjectContainer'
 import LoadingIcon from '../../components/LoadingCircle/LoadingIcon'
+import Banner from '../../components/Banner/Banner'
+
 function PortfolioList(props){
 
   const [projects, setProjects] = useState({})
@@ -36,9 +38,10 @@ function Portfolio(props){
 
   const content = (
     <div className="portfolio-page">
-      
+      <Banner />
       <TextContainer content={
         <>
+        
         <h1> portfolio </h1>
         <p>Here are some of the portfolio Pieces I have made over the past few months</p>
         </>

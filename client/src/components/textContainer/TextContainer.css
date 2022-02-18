@@ -2,9 +2,11 @@
 	border: 1px solid lightgray;
 	border-radius: 5px;
 	background: white;
-	margin: 10px auto;
+	display: inline-block;
 	min-width: 300px;
+	overflow: hidden;
 }
+
 
 .TextContainer>*:first-child{
 	padding-top: 10px;
@@ -23,5 +25,12 @@
 @media screen and (max-width: 300px){
 	.TextContainer{
 		min-width: 200px;
+	}
+}
+
+@media screen and (max-width: 800px){
+	.TextContainer{
+		width: 100% !important;
+		height: auto !important;
 	}
 }
