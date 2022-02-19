@@ -17,8 +17,7 @@ function PortfolioItem(props){
   const { id } = useParams();
 
   useEffect(()=>{
-   const port = process.env.PORT || '3001'
-   let fetchLink = `http://localhost:${port}/API/${id}`
+   let fetchLink = `/API/${id}`
     fetch(fetchLink)
       .then((response) => response.json())
       .then((responseJson) => {
