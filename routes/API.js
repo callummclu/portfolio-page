@@ -37,7 +37,7 @@ router.get('/', (req,res)=>{
 router.get('/:id', async (req,res)=>{
 
 	let { id } = req.params;
-	let project_db = projectModel.find({slug_title, `${id}`}, (err,projects_db)=>{
+	let project_db = projectModel.find({slug_title, id}, (err,projects_db)=>{
 		try {
 			res.status(200).json({
 				data:project_db
