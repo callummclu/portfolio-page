@@ -20,7 +20,7 @@ router.get('/', async (req, res)=>{
 */
 
 router.get('/', (req,res)=>{
-	let projects_db = project.find({}, (err,projects_db)=>{
+	let projects_db = projectModel.find({}, (err,projects_db)=>{
 		try {
 			res.status(200).json({
 				data:projects_db
