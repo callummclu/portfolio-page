@@ -35,7 +35,21 @@ router.get('/', (req,res)=>{
 })
 
 router.get('/:id', async (req,res)=>{
+
 	let { id } = req.params;
+	let project_db = projectModel.find(projectdb => projectdb.slug_title === id, (err,projects_db)=>{
+		try {
+			res.status(200).json({
+				data:projects_db
+			});
+		} catch (err){
+			res.status(400).json({
+				message: "an error occured",
+				err
+			});
+		}
+	})
+	/*
 	try {
 		let project = projects.find(project => project.slug_title === id)
 		res.status(200).json({
@@ -47,6 +61,7 @@ router.get('/:id', async (req,res)=>{
 			err
 		})
 	}
+	*/
 })
 
 module.exports = router;
