@@ -12,7 +12,8 @@ function RecentProjectContainer(){
   const [recentProject, setRecentProject] = useState([])
 
   useEffect(()=>{
-    fetch(`http://localhost:${(process.env.PORT || '3001')}/portfolio`)
+    const port = process.env.PORT || '3001'
+    fetch(`http://localhost:${port}/portfolio`)
       .then((response) => response.json())
       .then((responseJson) => {
         setRecentProject(responseJson.data)
