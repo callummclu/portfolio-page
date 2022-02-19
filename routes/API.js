@@ -1,11 +1,10 @@
 const express = require('express')
 const router = express.Router()
-/*
+
 const projectModel = require('../Models/project')
-*/
 
 let projects = require('../dummyDatabase')
-
+/*
 router.get('/', async (req, res)=>{
 	try {
 		res.status(200).json({
@@ -18,6 +17,22 @@ router.get('/', async (req, res)=>{
 		});
 	}
 });
+*/
+
+router.get('/', (req,res)=>{
+	let projects_db = project.find({}, (err,projects_db)=>{
+		try {
+			res.status(200).json({
+				data:projects_db
+			});
+		} catch (err){
+			res.status(400).json({
+				message: "an error occured",
+				err
+			});
+		}
+	})
+})
 
 router.get('/:id', async (req,res)=>{
 	let { id } = req.params;
