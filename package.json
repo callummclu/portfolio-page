@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/callummclu/portfolio-page#readme",
   "dependencies": {
-    "concurrently": "^7.0.0"
+    "concurrently": "^7.0.0",
+    "yarn": "^1.22.17"
   }
 }
