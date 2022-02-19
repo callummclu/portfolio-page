@@ -13,3 +13,11 @@ router.get('/', async (res,req)=>{
 		})
 	}
 })
+
+router.post('/add', async (res,req)=>{
+	try{
+
+	} catch (err){
+		res.status()
+	}
+})

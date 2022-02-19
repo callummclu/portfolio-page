@@ -1,3 +1,7 @@
+if(process.env.NODE_ENV !== 'production'){
+	require('dotenv').config()
+} 
+
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -11,9 +15,7 @@ const app = express();
 const portfolioRouter = require('./routes/portfolio')
 const ProjectModel = require('./Models/project')
 
-const uri = "mongodb+srv://callum:010305@cluster0.jtf1f.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
-
-mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true}, err =>{
+mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true}, err =>{
 	console.log('connected')
 })
 
