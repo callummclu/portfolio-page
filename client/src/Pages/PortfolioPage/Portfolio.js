@@ -11,7 +11,7 @@ function PortfolioList(props){
   const [projects, setProjects] = useState({})
   useEffect(() => {
     const port = process.env.PORT || '3001'
-    fetch(`http://localhost:${port}/portfolio`)
+    fetch(`http://localhost:${port}/API`)
       .then((response) => response.json())
       .then((responseJson) => {
         setProjects(responseJson.data)

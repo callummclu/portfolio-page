@@ -12,7 +12,7 @@ const mongoose = require('mongoose')
 
 const app = express();
 
-const portfolioRouter = require('./routes/portfolio')
+const APIRouter = require('./routes/API')
 const ProjectModel = require('./Models/project')
 
 mongoose.connect(process.env.DATABASE_URL, {useNewUrlParser: true, useUnifiedTopology: true}, err =>{
@@ -31,7 +31,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/portfolio',portfolioRouter);
+app.use('/API',APIRouter);
 
 app.use(express.static(path.join(__dirname, "client", "build")))
 
