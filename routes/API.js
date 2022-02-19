@@ -40,7 +40,7 @@ router.get('/:id', async (req,res)=>{
 	let project_db = projectModel.find(projectdb => projectdb.slug_title === id, (err,projects_db)=>{
 		try {
 			res.status(200).json({
-				data:projects_db
+				data:project_db
 			});
 		} catch (err){
 			res.status(400).json({
