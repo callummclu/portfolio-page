@@ -5,8 +5,6 @@ import {Link} from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
 import LoadingIcon from '../../components/LoadingCircle/LoadingIcon'
 
-var port = normalizePort(process.env.PORT || '3001');
-
 import './Home.css'
 
 function RecentProjectContainer(){
@@ -14,7 +12,7 @@ function RecentProjectContainer(){
   const [recentProject, setRecentProject] = useState([])
 
   useEffect(()=>{
-    fetch(`http://localhost:${{port}}/portfolio`)
+    fetch(`http://localhost:${(process.env.PORT || '3001')}/portfolio`)
       .then((response) => response.json())
       .then((responseJson) => {
         setRecentProject(responseJson.data)

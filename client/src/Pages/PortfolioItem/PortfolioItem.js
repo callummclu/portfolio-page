@@ -9,7 +9,6 @@ import LoadingIcon from '../../components/LoadingCircle/LoadingIcon'
 import Banner from '../../components/Banner/Banner'
 import TextContainer from '../../components/textContainer/TextContainer'
 
-var port = normalizePort(process.env.PORT || '3001');
 
 
 function PortfolioItem(props){
@@ -18,7 +17,7 @@ function PortfolioItem(props){
   const { id } = useParams();
 
   useEffect(()=>{
-   let fetchLink = `http://localhost:${port}/portfolio/${id}`
+   let fetchLink = `http://localhost:${(process.env.PORT || '3001')}/portfolio/${id}`
     fetch(fetchLink)
       .then((response) => response.json())
       .then((responseJson) => {
