@@ -13,7 +13,7 @@ function RecentProjectContainer(){
   const [recentProject, setRecentProject] = useState([])
 
   useEffect(()=>{
-    fetch("http://localhost:8000/portfolio")
+    fetch("http://localhost:3000/portfolio")
       .then((response) => response.json())
       .then((responseJson) => {
         setRecentProject(responseJson.data)
