@@ -5,12 +5,13 @@ import TextContainer from '../../components/textContainer/TextContainer'
 import ProjectContainer from '../../components/ProjectContainer/ProjectContainer'
 import LoadingIcon from '../../components/LoadingCircle/LoadingIcon'
 import Banner from '../../components/Banner/Banner'
+var port = normalizePort(process.env.PORT || '3001');
 
 function PortfolioList(props){
 
   const [projects, setProjects] = useState({})
   useEffect(() => {
-    fetch("http://localhost:3000/portfolio")
+    fetch(`http://localhost:${port}/portfolio`)
       .then((response) => response.json())
       .then((responseJson) => {
         setProjects(responseJson.data)
