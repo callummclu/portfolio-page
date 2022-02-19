@@ -3,6 +3,7 @@
 	height: 150px;
 	animation: 1s spin infinite;
 	display: inline-block;
+	margin: 0 auto;
 }
 
 .LoadingIcon svg{

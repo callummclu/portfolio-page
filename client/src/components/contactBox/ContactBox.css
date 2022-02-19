@@ -1,0 +1,76 @@
+.contact-container{
+	margin: 50px auto;
+	width: 70%;
+	height: 10vw;
+	border-radius: 10vw;
+	background: #8BB792;
+	overflow: hidden;
+	border: 3px solid #8BB792;
+}
+
+.contact-container * {
+	display: inline-block;
+	overflow: hidden;
+	text-align: center;
+}
+
+.contact-container .icon {
+	width: 20%;
+	height: 100%;
+
+}
+
+.icon img {
+	width: 60%;
+	height: 60%;
+	margin-left: 10%;
+	margin-top: 20%;
+	filter: invert(100%);
+	transform: scale(0.8);
+
+}
+
+.contact-container>.text{
+	width: 80%;
+	height: 100%;
+	background: white;
+	border-radius: 9vw;
+	text-align: center;
+	line-height: 10vw;
+	font-size: 2.5vw;
+}
+
+.text{
+	cursor: pointer;
+}
+
+.contact-container:first-child::after{
+	transition-duration: 0.25s;
+	width: 80px;
+	content: "click to copy";
+	position: absolute;
+	color: gray;
+	background: white;
+	opacity: 0;
+	text-align: center;
+	font-size: 12px;
+	padding-left: 10px;
+	padding-right: 10px;
+	left: calc(50% - 40px);	
+	border-radius: 150px;
+	cursor: hidden;
+	margin-top: -30px;
+	z-index: 1000;
+	white-space: nowrap;
+}
+
+
+.contact-box-container>.contact-container:first-child:hover::after{
+	opacity: 1;
+}
+
+
+
+.contact-box-container>.contact-container:first-child:active::after{
+	content: "copied";
+}

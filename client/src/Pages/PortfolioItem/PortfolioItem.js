@@ -16,7 +16,7 @@ function PortfolioItem(props){
   const { id } = useParams();
 
   useEffect(()=>{
-   let fetchLink = `http://192.168.0.10:3001/portfolio/${id}`
+   let fetchLink = `http://localhost:3001/portfolio/${id}`
     fetch(fetchLink)
       .then((response) => response.json())
       .then((responseJson) => {

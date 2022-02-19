@@ -13,7 +13,7 @@ function RecentProjectContainer(){
   const [recentProject, setRecentProject] = useState([])
 
   useEffect(()=>{
-    fetch("http://192.168.0.10:3001/portfolio")
+    fetch("http://localhost:3001/portfolio")
       .then((response) => response.json())
       .then((responseJson) => {
         setRecentProject(responseJson.data)
@@ -37,7 +37,7 @@ function RecentProjectContainer(){
     return content_box
   }
   catch(e){
-    return <h1>Error loading most recent project</h1>
+    return <LoadingIcon/>
   }
 }
 
