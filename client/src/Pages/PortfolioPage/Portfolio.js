@@ -10,7 +10,7 @@ function PortfolioList(props){
 
   const [projects, setProjects] = useState({})
   useEffect(() => {
-    fetch("http://localhost:3001/portfolio")
+    fetch("http://localhost:8000/portfolio")
       .then((response) => response.json())
       .then((responseJson) => {
         setProjects(responseJson.data)
