@@ -1,5 +1,3 @@
-import React from 'react'
-
 import React, { useState, useEffect } from 'react'
 import Container from '../components/container/Container'
 import TextContainer from '../components/textContainer/TextContainer'
