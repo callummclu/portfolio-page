@@ -44,6 +44,7 @@ function Portfolio(props){
         
         <h1> portfolio </h1>
         <p>Here are some of the portfolio Pieces I have made over the past few months</p>
+        <a href="create">new post</a>
         </>
       }/>
       <br/><br/>

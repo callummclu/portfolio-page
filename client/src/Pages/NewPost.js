@@ -14,7 +14,6 @@ function NewPost(props){
         <form action={createmethod} method="POST">
           <label> title </label><br/>
           <input type="text" name="title"/><br/>
-          <input type="submit" value="post"/>
           <label>tags </label><br/>
           <input type="text" name="tags"/><br/>
           <label>image</label><br/>
@@ -25,6 +24,7 @@ function NewPost(props){
           <input type="text" name="github"/><br/> 
           <label>additionalImages</label><br/>
           <input type="text" name="additionalImages"/><br/> 
+          <input type="submit" value="post"/>
         </form>
       </div>
   )

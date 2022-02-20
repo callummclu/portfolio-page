@@ -34,7 +34,7 @@ router.post('/create', async (req,res) => {
 	})
 	try {
 		const newProject = await project.save()
-		res.status(201).json(newProject)
+		res.redirect('../Portfolio')
 	} catch (err) {
 		res.status(400).json({
 			message: "an error occured",
