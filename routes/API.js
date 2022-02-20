@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+var slugify = require('slugify')
 
 const projectModel = require('../Models/project')
 
@@ -24,7 +25,12 @@ router.get('/', async (req,res)=>{
 router.post('/create', async (req,res) => {
 	const project = new projectModel({
 		slug_title: req.body.slug_title,
-		title: req.body.title
+		title: req.body.title,
+		tags: req.body.tags,
+		image: req.body.image,
+		content: req.body.content,
+		github: req.body.github,
+		additionalImages: req.body.additionalImages
 	})
 	try {
 		const newProject = await project.save()
@@ -54,10 +60,25 @@ router.delete('/:id', getProject, async (req,res)=>{
 router.patch('/:id', getProject, async (req,res)=>{
 	if (req.body.title != null) {
 		res.project.title = req.body.title
+		res.project.slug_title = slugify(res.project.title)
 	}
-	if (req.body.slug_title != null) {
-		res.project.slug_title = req.body.slug_title
+	if (req.body.tags != null) {
+		// tags array
+		res.project.tags = ['tag1','tag2']
 	}
+    if (req.body.image != null) {
+    	res.project.image = req.body.image
+    }
+    if (req.body.content != null) {
+    	res.project.content = req.body.content
+    }
+    if (req.body.github != null) {
+    	res.project.github = req.body.github
+    }
+	if (req.body.additionalImages != null) {
+		res.project.additionalImages = ['#','#']
+	}
+
 	try {
 		const updatedProject = await res.project.save()
 		res.json(updatedProject)

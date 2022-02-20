@@ -13,10 +13,18 @@ function NewPost(props){
     <div>
         <form action={createmethod} method="POST">
           <label> title </label><br/>
-          <input type="text" name="title" value="title"/><br/>
-          <label> slug_title </label><br/>
-          <input type="text" name="slug_title" value="slug_title"/><br/>
+          <input type="text" name="title"/><br/>
           <input type="submit" value="post"/>
+          <label>tags </label><br/>
+          <input type="text" name="tags"/><br/>
+          <label>image</label><br/>
+          <input type="text" name="image"/><br/> 
+          <label>content</label><br/>
+          <input type="text" name="content"/><br/> 
+          <label>github</label><br/>
+          <input type="text" name="github"/><br/> 
+          <label>additionalImages</label><br/>
+          <input type="text" name="additionalImages"/><br/> 
         </form>
       </div>
   )
