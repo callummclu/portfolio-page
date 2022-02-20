@@ -32,11 +32,10 @@ router.get('/:id', (req,res)=>{
 
 	let { id } = req.params;
 
-	let project_db = projectModel.find({slug_title, id}).toArray((err,result)=>{
-		console.log(result)
+	let project_db = projectModel.find({slug_title, id}, (err,project_db)=>{
 		try {
 			res.status(200).json({
-				data:result
+				data:project_db
 			});
 		} catch (err){
 			res.status(400).json({
