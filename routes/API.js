@@ -41,7 +41,7 @@ router.post('/create', async (req,res) => {
 router.delete('/:id', getProject, async (req,res)=>{
 	try {
 		await res.project.data.remove()
-		res.json({ message: "deleted project"})
+		res.redirect('../Portfolio')
 	} catch (err) {
 		res.status(500).json({
 			message:
