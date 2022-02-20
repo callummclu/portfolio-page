@@ -40,7 +40,7 @@ router.post('/create', async (req,res) => {
 //delete one
 router.delete('/:id', getProject, async (req,res)=>{
 	try {
-		await res.project[0].remove()
+		await res.project.data.remove()
 		res.json({ message: "deleted project"})
 	} catch (err) {
 		res.status(500).json({
