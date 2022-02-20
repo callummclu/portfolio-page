@@ -47,7 +47,7 @@ function PortfolioItem(props){
         <p>{project.content}</p>
         <h4>github</h4><p>{project.github}</p>
         <p>{project.additionalImages}</p>
-        <form action="/" method="delete">
+        <form action="./" method="DELETE">
           <input type="submit" value="delete post"/>
         </form>
       </div>
