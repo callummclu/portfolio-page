@@ -24,8 +24,8 @@ router.get('/', async (req,res)=>{
 // create one
 router.post('/create', async (req,res) => {
 	const project = new projectModel({
-		slug_title: req.body.slug_title,
 		title: req.body.title,
+		slug_title: slugify(req.body.title),
 		tags: req.body.tags,
 		image: req.body.image,
 		content: req.body.content,
