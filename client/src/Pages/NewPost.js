@@ -1,7 +1,7 @@
 import React from 'react'
 
-import Container from '../../components/container/Container'
-import TextContainer from '../../components/textContainer/TextContainer'
+import Container from '../components/container/Container'
+import TextContainer from '../components/textContainer/TextContainer'
 
 
 
