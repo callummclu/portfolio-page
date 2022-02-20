@@ -57,7 +57,7 @@ router.delete('/:id', getProject, async (req,res)=>{
 })
 
 // edit one 
-router.patch('/:id', getProject, async (req,res)=>{
+router.put('/:id', getProject, async (req,res)=>{
 
 	try {
 		res.project.data.title = req.body.title
