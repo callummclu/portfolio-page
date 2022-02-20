@@ -17,7 +17,7 @@ function PortfolioItem(props){
   const { id } = useParams();
 
   const deletemethod = `../../API/${id}?_method=DELETE`
-  const editLink = `../../API/${id}/edit`
+  const editLink = `../../portfolio/${id}/edit`
   useEffect(()=>{
    let fetchLink = `/API/${id}`
     fetch(fetchLink)
