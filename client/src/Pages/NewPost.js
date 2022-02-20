@@ -9,16 +9,19 @@ function NewPost(props){
 
   const createmethod = `../../API/create`
 
-  return (
+  const content = (
     <div>
         <form action={createmethod} method="POST">
-          <label> title </label>
-          <input type="text" name="title" value="title"/>
-          <label> slug_title </label>
-          <input type="text" name="slug_title" value="slug_title"/>
+          <label> title </label><br/>
+          <input type="text" name="title" value="title"/><br/>
+          <label> slug_title </label><br/>
+          <input type="text" name="slug_title" value="slug_title"/><br/>
+          <input type="submit" value="post"/>
         </form>
       </div>
   )
+
+  return <Container content={<TextContainer content={content}/>}/>
 }
 
 export default NewPost;
