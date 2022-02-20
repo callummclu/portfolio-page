@@ -24,17 +24,17 @@ function EditPost(props){
         <h1> Edit Post </h1>
         <form action={editmethod} method="PATCH">
           <label> title </label><br/>
-          <input type="text" name="title" value={project.title}/><br/>
+          <input type="text" name="title" value={project.title} readonly/><br/>
           <label>tags </label><br/>
-          <input type="text" name="tags" value={project.tags}/><br/>
+          <input type="text" name="tags" value={project.tags} readonly/><br/>
           <label>image</label><br/>
-          <input type="text" name="image" value={project.image}/><br/> 
+          <input type="text" name="image" value={project.image} readonly/><br/> 
           <label>content</label><br/>
-          <input type="text" name="content" value={project.content}/><br/> 
+          <input type="text" name="content" value={project.content} readonly/><br/> 
           <label>github</label><br/>
-          <input type="text" name="github" value={project.github}/><br/> 
+          <input type="text" name="github" value={project.github} readonly/><br/> 
           <label>additionalImages</label><br/>
-          <input type="text" name="additionalImages" value={project.additionalImages}/><br/> 
+          <input type="text" name="additionalImages" value={project.additionalImages} readonly/><br/> 
           <input type="submit" value="save changes"/>
         </form>
       </div>
