@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 function EditPost(props){
   const { id } = useParams()
-  const editmethod = `../../API/${id}?_method=PATCH`
+  const editmethod = `../../API/${id}/edit?_method=PATCH`
   const [project ,setProject] = useState([])
 
   useEffect(()=>{
