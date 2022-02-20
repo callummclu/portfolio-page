@@ -9,6 +9,7 @@ const logger = require('morgan');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose')
+const methodOverride = require('method-override')
 
 const app = express();
 
@@ -31,6 +32,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
 app.use('/API',APIRouter);
 
 app.use(express.static(path.join(__dirname, "client", "build")))
