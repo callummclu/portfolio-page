@@ -20,7 +20,7 @@ function EditPost(props){
     },[id])
 
   const content = (
-    <div>
+    <div className="post">
         <h1> Edit Post </h1>
         <form action={editmethod} method="POST">
           <label> title </label><br/>

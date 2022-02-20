@@ -10,7 +10,7 @@ function NewPost(props){
   const createmethod = `../../API/create`
 
   const content = (
-    <div>
+    <div className="post">
         <h1> Create a post </h1>
         <form action={createmethod} method="POST">
           <label> title </label><br/>
