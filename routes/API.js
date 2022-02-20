@@ -66,7 +66,7 @@ router.patch('/:id', getProject, async (req,res)=>{
 		res.project.data.content = req.body.content
 		res.project.data.github = req.body.github
 		await res.project.data.save()
-		res.redirect(`/portfolio/${id}`)
+		res.redirect(`/portfolio`)
 	} catch (err) {
 		res.status(400).json({message: err.message})
 	}
