@@ -17,6 +17,7 @@ function PortfolioItem(props){
   const { id } = useParams();
 
   const deletemethod = `../../API/${id}?_method=DELETE`
+  const editLink = `../../API/${id}/edit`
   useEffect(()=>{
    let fetchLink = `/API/${id}`
     fetch(fetchLink)
@@ -51,7 +52,7 @@ function PortfolioItem(props){
         <form action={deletemethod} method="POST">
           <input type="submit" value="delete"/>
         </form>
-        <a href="edit">Edit</a>
+        <a href={editLink}>Edit</a>
 
       </div>
     }/></div>
