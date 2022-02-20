@@ -48,16 +48,25 @@
 
 .edit{
 	float: right;
-	background: green;
-	border-color: green;
-	margin-right: 30px;
+	background: rgb(60,60,60);;
+	border-color: rgb(60,60,60);;
+	margin-right: 20px;
+	filter: invert(100%);
+	background-image: url("https://img.icons8.com/material-outlined/96/000000/edit--v1.png");
+	background-size: contain;
 }
 
 .delete{
 	float: right;
+	background-color: rgb(36, 171, 191);
+	border-color: rgb(36, 171, 191);
 
-	background: red;
-	border-color: red;
+	background-image: url("https://img.icons8.com/material-outlined/96/000000/filled-trash.png");
+	filter: invert(100%);
+	background-size: contain;
+
+	overflow: hidden;
+	text-align: center;
 }
 
 .delete input {

@@ -48,7 +48,7 @@ function PortfolioItem(props){
             <span>
               <div className="change-box delete">
                 <form action={deletemethod} method="POST">
-                  <input type="submit"/>
+                  <input type="submit" value=""/>
                 </form>
               </div>
             </span>
