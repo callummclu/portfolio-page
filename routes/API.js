@@ -59,24 +59,24 @@ router.delete('/:id', getProject, async (req,res)=>{
 // edit one 
 router.patch('/:id', getProject, async (req,res)=>{
 	if (req.body.title != null) {
-		res.project.title = req.body.title
-		res.project.slug_title = slugify(res.project.title)
+		res.project.data.title = req.body.title
+		res.project.data.slug_title = slugify(res.project.title)
 	}
 	if (req.body.tags != null) {
 		// tags array
-		res.project.tags = ['tag1','tag2']
+		res.project.data.tags = ['tag1','tag2']
 	}
     if (req.body.image != null) {
-    	res.project.image = req.body.image
+    	res.project.data.image = req.body.image
     }
     if (req.body.content != null) {
-    	res.project.content = req.body.content
+    	res.project.data.content = req.body.content
     }
     if (req.body.github != null) {
-    	res.project.github = req.body.github
+    	res.project.data.github = req.body.github
     }
 	if (req.body.additionalImages != null) {
-		res.project.additionalImages = ['#','#']
+		res.project.data.additionalImages = ['#','#']
 	}
 
 	try {
