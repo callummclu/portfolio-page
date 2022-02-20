@@ -34,7 +34,7 @@ router.post('/create', async (req,res) => {
 	})
 	try {
 		const newProject = await project.save()
-		res.redirect('../Portfolio')
+		res.redirect('../portfolio')
 	} catch (err) {
 		res.status(400).json({
 			message: "an error occured",
@@ -47,7 +47,7 @@ router.post('/create', async (req,res) => {
 router.delete('/:id', getProject, async (req,res)=>{
 	try {
 		await res.project.data.remove()
-		res.redirect('../Portfolio')
+		res.redirect('../portfolio')
 	} catch (err) {
 		res.status(500).json({
 			message:
