@@ -50,6 +50,7 @@
 	float: right;
 	background: green;
 	border-color: green;
+	margin-right: 30px;
 }
 
 .delete{
@@ -64,6 +65,7 @@
 	height: 100%;
 	background: none;
 	border: none;
+	cursor: pointer;
 }
 
 .create{
