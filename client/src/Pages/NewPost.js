@@ -11,6 +11,7 @@ function NewPost(props){
 
   const content = (
     <div>
+        <h1> Create a post </h1>
         <form action={createmethod} method="POST">
           <label> title </label><br/>
           <input type="text" name="title"/><br/>
