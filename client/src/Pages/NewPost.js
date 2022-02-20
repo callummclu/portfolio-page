@@ -7,7 +7,7 @@ import TextContainer from '../components/textContainer/TextContainer'
 
 function NewPost(props){
 
-  const createmethod = `../../API/${id}`
+  const createmethod = `../../API/create`
 
   return (
     <div>
