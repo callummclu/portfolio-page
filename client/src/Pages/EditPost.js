@@ -7,7 +7,7 @@ import { useParams } from "react-router-dom";
 
 function EditPost(props){
   const { id } = useParams()
-  const editmethod = `../../API/${id}?_method=PATCH`
+  const editmethod = `../../API/${id}?_method=PUT`
   const [project ,setProject] = useState([])
 
   useEffect(()=>{
@@ -22,7 +22,7 @@ function EditPost(props){
   const content = (
     <div>
         <h1> Edit Post </h1>
-        <form action={editmethod} method="PUT">
+        <form action={editmethod} method="POST">
           <label> title </label><br/>
           <input type="text" defaultValue={project.title} name="title"/><br/>
           <label>tags </label><br/>
