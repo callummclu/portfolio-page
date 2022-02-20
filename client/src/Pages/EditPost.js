@@ -22,7 +22,7 @@ function EditPost(props){
   const content = (
     <div>
         <h1> Edit Post </h1>
-        <form action={editmethod} method="PUT">
+        <form action={editmethod} method="PATCH">
           <label> title </label><br/>
           <input type="text" defaultValue={project.title} name="title"/><br/>
           <label>tags </label><br/>

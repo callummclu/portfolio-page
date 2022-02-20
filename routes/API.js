@@ -57,7 +57,7 @@ router.delete('/:id', getProject, async (req,res)=>{
 })
 
 // edit one 
-router.patch('/:id', getProject, async (req,res)=>{
+router.patch('/:id/edit', getProject, async (req,res)=>{
 	if (req.body.title != null) {
 		res.project.data.title = req.body.title
 		res.project.data.slug_title = slugify(res.project.title)
