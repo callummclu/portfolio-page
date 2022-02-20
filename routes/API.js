@@ -75,7 +75,7 @@ router.get('/:id', getProject, (req,res)=>{
 async function getProject(req,res,next){
 	let project
 	try {
-		project = await projectModel.findById(req.params.id)
+		project = await projectModel.find({slug_title: req.params.id})
 		if(project == null) {
 			return res.status(404).json({message:"cannot find project"})
 		}
