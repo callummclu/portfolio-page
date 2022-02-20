@@ -76,6 +76,7 @@ async function getProject(req,res,next){
 	let project
 	try {
 		project = await projectModel.find({slug_title: req.params.id})
+		project = project[0]
 		if(project == null) {
 			return res.status(404).json({message:"cannot find project"})
 		}
