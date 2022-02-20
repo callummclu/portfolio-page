@@ -18,7 +18,6 @@ function NewPost(props){
           <input type="text" name="slug_title" value="slug_title"/>
         </form>
       </div>
-    }
   )
 }
 
