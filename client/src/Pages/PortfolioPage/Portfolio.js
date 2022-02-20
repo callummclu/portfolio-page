@@ -42,9 +42,8 @@ function Portfolio(props){
       <TextContainer content={
         <>
         
-        <h1> portfolio </h1>
-        <p>Here are some of the portfolio Pieces I have made over the past few months<br/>
-        <a href="portfolio/create">new post</a></p>
+        <h1> portfolio <span><a href="portfolio/create"><div className="change-box create"></div></a></span></h1>
+        <p>Here are some of the portfolio Pieces I have made over the past few months<br/></p>
         </>
       }/>
       <br/><br/>

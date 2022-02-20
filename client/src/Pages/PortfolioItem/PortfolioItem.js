@@ -41,7 +41,25 @@ function PortfolioItem(props){
         <style>{'body { background-color: red; }'}</style>
       </Helmet>
       <Banner />
-      <TextContainer content={<div><h1>{project.title}</h1><p>{tagList}</p></div>} />
+      <TextContainer content={
+        <div>
+          <h1>
+            {project.title}
+            <span>
+              <a href="portfolio/create">
+                <div className="change-box delete">
+                  <form action={deletemethod} method="POST">
+                    <input type="submit"/>
+                  </form>
+                </div>
+              </a>
+            </span>
+            <span>
+              <a href={editLink}><div className="change-box edit"></div></a>
+            </span>
+          </h1>
+          <p>{tagList}</p>
+        </div>} />
       <br/><br/>
       <br/>
       <TextContainer content={
@@ -49,11 +67,6 @@ function PortfolioItem(props){
         <p>{project.content}</p>
         <h4>github</h4><p>{project.github}</p>
         <p>{project.additionalImages}</p>
-        <form action={deletemethod} method="POST">
-          <input type="submit" value="delete"/>
-        </form>
-        <a href={editLink}>Edit</a>
-
       </div>
     }/></div>
   )
