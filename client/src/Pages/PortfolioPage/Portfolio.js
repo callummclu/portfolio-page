@@ -43,8 +43,8 @@ function Portfolio(props){
         <>
         
         <h1> portfolio </h1>
-        <p>Here are some of the portfolio Pieces I have made over the past few months</p>
-        <a href="portfolio/create">new post</a>
+        <p>Here are some of the portfolio Pieces I have made over the past few months<br/>
+        <a href="portfolio/create">new post</a></p>
         </>
       }/>
       <br/><br/>
