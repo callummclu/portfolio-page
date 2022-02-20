@@ -61,7 +61,7 @@ router.patch('/:id', getProject, async (req,res)=>{
 
 	try {
 		res.project.data.title = req.body.title
-		res.project.data.slug_title = slugify(res.body.title)
+		res.project.data.slug_title = slugify(req.body.title)
    		res.project.data.image = req.body.image   
 		res.project.data.content = req.body.content
 		res.project.data.github = req.body.github
