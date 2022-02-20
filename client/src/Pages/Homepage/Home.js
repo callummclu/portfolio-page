@@ -20,7 +20,7 @@ function RecentProjectContainer(){
   },[])
 
   try{
-  const mostRecentProject = recentProject[2]
+  const mostRecentProject = recentProject[-1]
   const link = '../../portfolio/' + mostRecentProject.slug_title
 
 
