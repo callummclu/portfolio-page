@@ -4,20 +4,6 @@ const router = express.Router()
 const projectModel = require('../Models/project')
 
 let projects = require('../dummyDatabase')
-/*
-router.get('/', async (req, res)=>{
-	try {
-		res.status(200).json({
-			data:projects
-		});
-	} catch (err){
-		res.status(400).json({
-			message: "an error occured",
-			err
-		});
-	}
-});
-*/
 
 router.get('/', (req,res)=>{
 	let projects_db = projectModel.find({}, (err,projects_db)=>{
@@ -34,9 +20,19 @@ router.get('/', (req,res)=>{
 	})
 })
 
-router.get('/:id', async (req,res)=>{
+/*
+	POST ROUTE
+*/
+
+/*
+	DELETE ROUTE
+*/
+
+router.get('/:id', (req,res)=>{
 
 	let { id } = req.params;
+
+	// ERROR ON LINE 42 FIX THIS
 	let project_db = projectModel.find({slug_title, id}, (err,projects_db)=>{
 		try {
 			res.status(200).json({
@@ -49,19 +45,6 @@ router.get('/:id', async (req,res)=>{
 			});
 		}
 	})
-	/*
-	try {
-		let project = projects.find(project => project.slug_title === id)
-		res.status(200).json({
-			data: project
-		});
-	} catch (err) {
-		res.status(400).json({
-			message: "an error occured",
-			err
-		})
-	}
-	*/
 })
 
 module.exports = router;
