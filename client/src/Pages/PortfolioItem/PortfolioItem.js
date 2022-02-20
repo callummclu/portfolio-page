@@ -46,13 +46,11 @@ function PortfolioItem(props){
           <h1>
             {project.title}
             <span>
-              <a href="portfolio/create">
-                <div className="change-box delete">
-                  <form action={deletemethod} method="POST">
-                    <input type="submit"/>
-                  </form>
-                </div>
-              </a>
+              <div className="change-box delete">
+                <form action={deletemethod} method="POST">
+                  <input type="submit"/>
+                </form>
+              </div>
             </span>
             <span>
               <a href={editLink}><div className="change-box edit"></div></a>

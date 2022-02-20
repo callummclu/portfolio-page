@@ -47,11 +47,14 @@
 }
 
 .edit{
+	float: right;
 	background: green;
 	border-color: green;
 }
 
 .delete{
+	float: right;
+
 	background: red;
 	border-color: red;
 }
