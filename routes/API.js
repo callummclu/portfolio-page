@@ -58,31 +58,15 @@ router.delete('/:id', getProject, async (req,res)=>{
 
 // edit one 
 router.patch('/:id', getProject, async (req,res)=>{
-	if (req.body.title != null) {
-		res.project.data.title = req.body.title
-		res.project.data.slug_title = slugify(res.project.title)
-	}
-	if (req.body.tags != null) {
-		// tags array
-		res.project.data.tags = ['tag1','tag2']
-	}
-    if (req.body.image != null) {
-    	res.project.data.image = req.body.image
-    }
-    if (req.body.content != null) {
-    	res.project.data.content = req.body.content
-    }
-    if (req.body.github != null) {
-    	res.project.data.github = req.body.github
-    }
-	if (req.body.additionalImages != null) {
-		res.project.data.additionalImages = ['#','#']
-	}
 
 	try {
-		console.log("patch")
-		const updatedProject = await res.project.data.save()
-		res.json({"message":"patch"})
+		res.project.data.title = req.body.title
+		res.project.data.slug_title = slugify(res.project.title)
+   		res.project.data.image = req.body.image   
+		res.project.data.content = req.body.content
+		res.project.data.github = req.body.github
+		await res.project.data.save()
+		res.redirect(`/portfolio/${id}`)
 	} catch (err) {
 		res.status(400).json({message: err.message})
 	}
