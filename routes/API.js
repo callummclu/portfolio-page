@@ -32,11 +32,11 @@ router.get('/:id', (req,res)=>{
 
 	let { id } = req.params;
 
-	// ERROR ON LINE 42 FIX THIS
-	let project_db = projectModel.find({slug_title, id}).toArray(()=>{
+	let project_db = projectModel.find({slug_title, id}).toArray((err,result)=>{
+		console.log(result)
 		try {
 			res.status(200).json({
-				data:project_db
+				data:result
 			});
 		} catch (err){
 			res.status(400).json({
