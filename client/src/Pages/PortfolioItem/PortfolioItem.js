@@ -51,6 +51,7 @@ function PortfolioItem(props){
         <form action={deletemethod} method="POST">
           <input type="submit" value="delete"/>
         </form>
+      
 
       </div>
     }/></div>
