@@ -16,7 +16,7 @@ function PortfolioItem(props){
   const [project ,setProject] = useState([])
   const { id } = useParams();
 
-  const deletemethod = `${id}?_method=DELETE`
+  const deletemethod = `./API/${id}?_method=DELETE`
 
   useEffect(()=>{
    let fetchLink = `/API/${id}`
