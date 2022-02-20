@@ -9,6 +9,7 @@ import Home from './Pages/Homepage/Home'
 import Portfolio from './Pages/PortfolioPage/Portfolio'
 import Contact from './Pages/ContactPage/Contact'
 import PortfolioItem from './Pages/PortfolioItem/PortfolioItem'
+import NewPost from './Pages/NewPost'
 
 // component imports
 import ScrollToTop from './ScrollToTop'
@@ -31,6 +32,7 @@ function App() {
               <Route path="portfolio" element={<Portfolio />}  />
               <Route path="contact" element={<Contact />} />
               <Route path="portfolio/:id" element={<PortfolioItem/>} />
+              <Route path="portfolio/create" element={<NewPost/>} />
             </Routes>
           </ScrollToTop>
       </BrowserRouter>
