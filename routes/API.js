@@ -80,7 +80,7 @@ router.patch('/:id', getProject, async (req,res)=>{
 	}
 
 	try {
-		const updatedProject = await res.project.save()
+		const updatedProject = await res.project.data.save()
 		res.redirect('../Portfolio')
 	} catch (err) {
 		res.status(400).json({message: err.message})
