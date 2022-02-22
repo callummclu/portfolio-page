@@ -10,9 +10,6 @@ var project = new Schema({
 	tags: [String],
 	image: String,
 	content: String,
-	github: String,
-	additionalImages: [String],
-	p_date: Date
 });
 
 

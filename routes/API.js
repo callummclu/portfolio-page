@@ -29,8 +29,6 @@ router.post('/create', async (req,res) => {
 		tags: req.body.tags,
 		image: req.body.image,
 		content: req.body.content,
-		github: req.body.github,
-		additionalImages: req.body.additionalImages
 	})
 	try {
 		const newProject = await project.save()
@@ -64,7 +62,6 @@ router.patch('/:id', getProject, async (req,res)=>{
 		res.project.data.slug_title = slugify(req.body.title)
    		res.project.data.image = req.body.image   
 		res.project.data.content = req.body.content
-		res.project.data.github = req.body.github
 		await res.project.data.save()
 		res.redirect(`/portfolio`)
 	} catch (err) {

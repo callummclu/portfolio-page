@@ -30,7 +30,7 @@ function PortfolioList(props){
       </>)
   }
 
-  return  projects.length ? <div>{list}</div> : <LoadingIcon />
+  return  projects.length ? <div>{list}</div> : <p> no content to load</p>
   
 }
 

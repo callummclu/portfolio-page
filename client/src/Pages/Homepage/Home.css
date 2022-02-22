@@ -1,4 +1,4 @@
-button {
+.home {
 	width: 80%;
 	max-width: 350px;
 	height: 84px;
@@ -10,7 +10,7 @@ button {
 	border-radius: 50px;
 }
 
-button:hover{
+.home:hover{
 	cursor: pointer;
 	filter: brightness(0.8);
 }

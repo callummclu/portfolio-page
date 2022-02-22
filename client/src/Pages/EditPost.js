@@ -19,6 +19,15 @@ function EditPost(props){
       })
     },[id])
 
+    let curr_tags = []
+    try{
+      for (var i = 0 ; i < (project.tags).length; i++) {  
+        curr_tags.push(<span className="tag">{project.tags[i]}</span>)
+      }
+    } catch (err){
+      curr_tags = [<><input type="text" name="tags[]"/><br/></>]
+    }
+
   const content = (
     <div className="post">
         <h1> Edit Post </h1>
@@ -26,15 +35,11 @@ function EditPost(props){
           <label> title </label><br/>
           <input type="text" defaultValue={project.title} name="title"/><br/>
           <label>tags </label><br/>
-          <input type="text" defaultValue={project.tags} name="tags"/><br/>
+          <span>{curr_tags}</span><br/>
           <label>image</label><br/>
           <input type="text" defaultValue={project.image} name="image" /><br/> 
-          <label style={{resize:"both"}}>content</label><br/>
-          <input type="text" defaultValue={project.content} name="content" /><br/> 
-          <label>github</label><br/>
-          <input type="text" defaultValue={project.github} name="github" /><br/> 
-          <label>additionalImages</label><br/>
-          <input type="text" defaultValue={project.additionalImages} name="additionalImages" /><br/> 
+          <label>content</label><br/>
+          <input type="text" defaultValue={project.content} name="content" /><br/><br/>
           <input type="submit" value="save changes"/>
         </form>
       </div>

@@ -63,8 +63,6 @@ function PortfolioItem(props){
       <TextContainer content={
       <div>    
         <p>{project.content}</p>
-        <h4>github</h4><p>{project.github}</p>
-        <p>{project.additionalImages}</p>
       </div>
     }/></div>
   )

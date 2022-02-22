@@ -28,7 +28,7 @@ function RecentProjectContainer(){
       <div className="recent-project-container" style={{backgroundImage:`url(${mostRecentProject.image})`}}>
           <div>
             <h3> {mostRecentProject.title }<span> <a href={link}>View Here</a></span></h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus nisi nunc, eget vehicula magna tincidunt ut. Fusce eu dolor quis dui aliquam facilisis. Phasellus non finibus odio, ac maximus leo. Donec pretium arcu ac ante ornare, non vestibulum magna venenatis. Proin mollis vestibulum diam rhoncus dictum. Nam at lacus nulla. Morbi sed commodo nunc, et ultricies eros. Donec sit amet efficitur orci, ut vehicula quam. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Morbi ac egestas mauris, in convallis velit. Nulla feugiat diam sed nulla pellentesque ultricies. Pellentesque scelerisque turpis a nibh iaculis convallis.</p>
+            <p>{mostRecentProject.content}</p>
           </div>
       </div> 
       )
@@ -36,7 +36,7 @@ function RecentProjectContainer(){
     return content_box
   }
   catch(e){
-    return <LoadingIcon/>
+    return <p> error loading content </p>
   }
 }
 
@@ -54,8 +54,8 @@ function Home(){
         </>
       }/>
       <div className="button-container">
-        <Link to="../../portfolio"><button>Portfolio</button></Link>
-        <Link to="../../contact"><button>Contact</button></Link>
+        <Link to="../../portfolio"><button className="home">Portfolio</button></Link>
+        <Link to="../../contact"><button className="home">Contact</button></Link>
       </div>
 
       <h2 className="heading-title"> My Most Recent Project </h2>
