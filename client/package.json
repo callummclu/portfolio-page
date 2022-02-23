@@ -6,11 +6,16 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "@uiw/react-md-editor": "^3.9.5",
+    "dotenv": "^16.0.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-helmet": "^6.1.0",
+    "react-markdown": "^8.0.0",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "react-slugify": "^2.1.0",
+    "slate": "^0.72.8",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -36,5 +41,8 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:3001"
+  "devDependencies": {
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.2"
+  }
 }

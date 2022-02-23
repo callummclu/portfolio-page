@@ -1,0 +1,17 @@
+.LoadingIcon{
+	width: 150px;
+	height: 150px;
+	animation: 1s spin infinite;
+	display: inline-block;
+	margin: 0 auto;
+}
+
+.LoadingIcon svg{
+	width: 100%;
+	height: 100%;
+}
+
+@keyframes spin {
+	0%{transform: rotate(0deg) scale(0.5);}
+	100%{transform: rotate(360deg) scale(0.5);}
+}

@@ -1,0 +1,77 @@
+.home {
+	width: 80%;
+	max-width: 350px;
+	height: 84px;
+	border: 3px solid #8BB792;
+	background: #8BB792;
+	color: white;
+	margin: 10px;
+	font-size: 20px;
+	border-radius: 35px;
+}
+
+.home:hover{
+	cursor: pointer;
+	filter: brightness(0.8);
+}
+
+.grayout{
+	color: lightgray;
+}
+
+.button-container{
+	width: calc(50% - 2px);
+	display: inline-block;
+	text-align: center;
+	overflow-x: auto;
+	height: 300px;
+}
+
+.button-container div{
+	height: 50%;
+}
+
+.button-container>div>a>button{
+	margin-top: calc(32px);
+}
+
+@media screen and (max-width: 800px){
+	.button-container{
+		width: 100% !important;
+		margin-top: 30px;
+	}
+}
+
+.heading-title{
+	padding-top: 25px;
+}
+
+.recent-project-container{
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	overflow: hidden;
+	background-size: cover;
+}
+
+.recent-project-container>div{
+	width: 100%;
+	height: 100%;
+	background: rgba(60, 60, 60, 0.9);
+	padding: 25px;
+	padding-top: 10px;
+}
+.recent-project-container>div>*{
+	color: white;
+	padding-right: 25px;
+
+}
+
+.recent-project-container>div>p{
+	padding-right: 50px;
+}
+
+.recent-project-container>div>h3>span{
+	font-size: 12px;
+	font-weight: lighter;
+}

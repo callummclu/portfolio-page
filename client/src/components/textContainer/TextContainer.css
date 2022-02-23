@@ -1,0 +1,37 @@
+.TextContainer{
+	border: 1px solid lightgray;
+	border-radius: 5px;
+	background: white;
+	display: inline-block;
+	min-width: 300px;
+	overflow: hidden;
+}
+
+
+.TextContainer>*:first-child{
+	padding-top: 10px;
+}
+
+.TextContainer>*:last-child{
+	padding-bottom: 10px;
+}
+
+.TextContainer>*{
+	padding-left: 25px;
+	padding-right: 25px;
+	text-align: left;
+	word-wrap: break-word;
+}
+
+@media screen and (max-width: 300px){
+	.TextContainer{
+		min-width: 200px;
+	}
+}
+
+@media screen and (max-width: 800px){
+	.TextContainer{
+		width: 100% !important;
+		height: auto !important;
+	}
+}
