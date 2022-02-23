@@ -7,7 +7,7 @@
 	color: white;
 	margin: 10px;
 	font-size: 20px;
-	border-radius: 50px;
+	border-radius: 35px;
 }
 
 .home:hover{
@@ -15,15 +15,24 @@
 	filter: brightness(0.8);
 }
 
+.grayout{
+	color: lightgray;
+}
+
 .button-container{
 	width: calc(50% - 2px);
 	display: inline-block;
 	text-align: center;
-	overflow: hidden;
+	overflow-x: auto;
+	height: 300px;
 }
 
-.button-container>*{
-	display: block;
+.button-container div{
+	height: 50%;
+}
+
+.button-container>div>a>button{
+	margin-top: calc(32px);
 }
 
 @media screen and (max-width: 800px){

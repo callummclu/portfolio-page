@@ -46,16 +46,19 @@ function Home(){
   const content = (
     <>
       <Banner />
-      <TextContainer width="50%"  height="200px" content={
+      <div>
+      <TextContainer style={{width:"calc(50% - 50px)", height:"250px",padding:"25px"}} content={
         <>
-
-          <h1>Welcome</h1>
-          <p>This is a small web app used to display all of my projects i have works on as an aspiring full stack developer</p>
+          
+          <h1><span className="grayout"># </span>Welcome</h1>
+          
+          <blockquote>This is a small web app used to display all of my projects i have works on as an aspiring full stack developer. I will be updating the site will all of the new projects I work on in the near future!</blockquote>
         </>
       }/>
-      <div className="button-container">
-        <Link to="../../portfolio"><button className="home">Portfolio</button></Link>
-        <Link to="../../contact"><button className="home">Contact</button></Link>
+      <div className="button-container" >
+        <div><Link to="../../portfolio"><button className="home">Portfolio</button></Link></div>
+        <div><Link to="../../contact"><button className="home">Contact</button></Link></div>
+      </div>
       </div>
 
       <h2 className="heading-title"> My Most Recent Project </h2>

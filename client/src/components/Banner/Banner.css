@@ -3,7 +3,6 @@
 
 .name-container{
 	text-align: center;
-	margin-top: -50px;
 }
 
 .name-container>h1 {
@@ -25,4 +24,9 @@
 		font-size: 3.5vw;
 		line-height: calc(100px);
 	}
+}
+
+.banner{
+		margin-bottom: 100px;
+
 }
