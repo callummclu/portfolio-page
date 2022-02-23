@@ -28,7 +28,7 @@ function RecentProjectContainer(){
       <div className="recent-project-container" style={{backgroundImage:`url(${mostRecentProject.image})`}}>
           <div>
             <h3> {mostRecentProject.title }<span> <a href={link}>View Here</a></span></h3>
-            <p>{mostRecentProject.description}</p>
+            <p>{mostRecentProject.description || "no description written..."}</p>
           </div>
       </div> 
       )
