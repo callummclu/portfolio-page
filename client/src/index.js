@@ -28,27 +28,37 @@ function App() {
   const [toggle, setToggle] = useState(false)
 
   const [isAuth, setIsAuth] = useState({})
+  const [permissions, setPermissions] = useState({})
 
 
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(`/API/account/is_authenticated`)
       setIsAuth(result.data.message)
+      setPermissions(result.data.permissions)
     }
     fetchData();
   }, [])
+
+  let isAdmin = false
+  
+  if(permissions == "2"){
+    isAdmin = true
+  }
+
+  
   return (
       <BrowserRouter>
         <Nav hamburgerToggle={[toggle,setToggle]}/>
         {isAuth ? <Sidebar auth="true" show={toggle}/> : <Sidebar show={toggle}/>}
           <ScrollToTop>
             <Routes> 
-              <Route path="/" element={<Home auth={isAuth} />} />
-              <Route path="portfolio" element={<Portfolio auth={isAuth}/>}  />
-              <Route path="contact" element={<Contact auth={isAuth}/>} />
-              <Route path="portfolio/:id" element={<PortfolioItem auth={isAuth}/>} />
-              <Route path="portfolio/create" element={<NewPost auth={isAuth}/>} />
-              <Route path="portfolio/:id/edit" element={<EditPost auth={isAuth}/>}/>
+              <Route path="/" element={<Home auth={isAdmin} />} />
+              <Route path="portfolio" element={<Portfolio auth={isAdmin}/>}  />
+              <Route path="contact" element={<Contact auth={isAdmin}/>} />
+              <Route path="portfolio/:id" element={<PortfolioItem auth={isAdmin}/>} />
+              <Route path="portfolio/create" element={<NewPost auth={isAdmin}/>} />
+              <Route path="portfolio/:id/edit" element={<EditPost auth={isAdmin}/>}/>
               <Route path="login" element={<Login />}/>
               <Route path="register" element={<Register />}/>
               <Route path="API" element={<Error type="404"/>}/>

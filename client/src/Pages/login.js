@@ -26,6 +26,7 @@ export default function Login(){
 			  
 			</div>
 			<button type="submit" class="btn btn-primary btn-block">Login</button>
+			<a href="/register">create account</a>
 			</form>
 		</>
 	)

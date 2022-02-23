@@ -9,6 +9,7 @@ import LoadingIcon from '../../components/LoadingCircle/LoadingIcon'
 import Banner from '../../components/Banner/Banner'
 import TextContainer from '../../components/textContainer/TextContainer'
 import Error from '../Error'
+import ReactMarkdown from 'react-markdown'
 
 
 function PortfolioItem(props){
@@ -63,13 +64,15 @@ function PortfolioItem(props){
               }
               </h1>
               <p>{tagList}</p>
+
+              {/*<p>likes: {project.likes}</p>*/}
             </div>} />
           <br/><br/>
           <br/>
           <TextContainer content={
-          <div>    
-            <p>{project.content}</p>
-          </div>
+          <div>  
+            <ReactMarkdown>{project.content}</ReactMarkdown>
+            </div>
         }/></div>
     )  
   

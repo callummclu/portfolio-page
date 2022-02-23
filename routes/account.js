@@ -48,7 +48,7 @@ router.post('/login',(req,res,next)=>{
 
 router.get('/is_authenticated',(req,res)=>{
     if (req.user) {
-        res.json({message:true,user:req.user});
+        res.json({message:true,permissions:req.user.permissions});
     } else {
         res.json({
             message:false

@@ -38,7 +38,6 @@ function PortfolioList(props){
 function Portfolio(props){
 
   const auth = props.auth
-  console.log(auth)
 
   const content = (
     <div className="portfolio-page">

@@ -20,7 +20,7 @@ const UserSchema  = new mongoose.Schema({
 		},
 		permissions :{
 			type: String,
-			default: 0
+			default: 1
 		}
 });
 const User= mongoose.model('User',UserSchema);

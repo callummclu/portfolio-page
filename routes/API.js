@@ -30,7 +30,9 @@ router.post('/create', async (req,res) => {
 		slug_title: slugify(req.body.title),
 		tags: req.body.tags,
 		image: req.body.image,
+		description: req.body.description,
 		content: req.body.content,
+		likes: 0,
 	})
 	try {
 		const newProject = await project.save()
