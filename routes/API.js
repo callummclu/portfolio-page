@@ -1,7 +1,9 @@
 const express = require('express')
 const router = express.Router()
 var slugify = require('slugify')
+const accountRouter = require('./account')
 
+router.use('/account',accountRouter)
 const projectModel = require('../Models/project')
 
 // get all

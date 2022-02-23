@@ -9,6 +9,7 @@ function EditPost(props){
   const { id } = useParams()
   const editmethod = `../../API/${id}?_method=PATCH`
   const [project ,setProject] = useState([])
+  const auth = props.auth
 
   useEffect(()=>{
    let fetchLink = `/API/${id}`
@@ -27,8 +28,10 @@ function EditPost(props){
     } catch (err){
       curr_tags = [<><input type="text" name="tags[]"/><br/></>]
     }
+  let content = (<></>)
 
-  const content = (
+  {!auth ? content = <><h1>404</h1><p>you do not have access to this page.</p></> : content = (
+
     <div className="post">
         <h1> Edit Post </h1>
         <form action={editmethod} method="POST">
@@ -43,7 +46,9 @@ function EditPost(props){
           <input type="submit" value="save changes"/>
         </form>
       </div>
+  
   )
+  }
 
   return <Container content={<TextContainer content={content}/>}/>
 }

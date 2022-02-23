@@ -8,10 +8,12 @@ import Container from '../../components/container/Container'
 import LoadingIcon from '../../components/LoadingCircle/LoadingIcon'
 import Banner from '../../components/Banner/Banner'
 import TextContainer from '../../components/textContainer/TextContainer'
-
+import Error from '../Error'
 
 
 function PortfolioItem(props){
+
+  const auth = props.auth
 
   const [project ,setProject] = useState([])
   const { id } = useParams();
@@ -29,47 +31,52 @@ function PortfolioItem(props){
 
 
 
-  let tags = project.tags
+  
   try {
-  let tagList = []
-  for (let i = 0; i<tags.length; i++){
-    tagList.push(<span className="tag">{tags[i]}</span>)
-  }
-  const content = (
-    <div>
-      <Helmet>
-        <style>{'body { background-color: red; }'}</style>
-      </Helmet>
-      <Banner />
-      <TextContainer content={
+      let tags = project.tags
+      let tagList = []
+      for (let i = 0; i<tags.length; i++){
+        tagList.push(<span className="tag">{tags[i]}</span>)
+      }
+       let content = (
         <div>
-          <h1>
-            {project.title}
-            <span>
-              <div className="change-box delete">
-                <form action={deletemethod} method="POST">
-                  <input type="submit" value=""/>
-                </form>
-              </div>
-            </span>
-            <span>
-              <a href={editLink}><div className="change-box edit"></div></a>
-            </span>
-          </h1>
-          <p>{tagList}</p>
-        </div>} />
-      <br/><br/>
-      <br/>
-      <TextContainer content={
-      <div>    
-        <p>{project.content}</p>
-      </div>
-    }/></div>
-  )
-  return (typeof project.title != "undefined") ?  <Container content={content} /> : <div className="centerIcon"><LoadingIcon /></div>
+          <Banner />
+          <TextContainer content={
+            <div>
+              <h1>
+                {project.title}
+                {auth ?
+                  <>
+                <span>
+                  <div className="change-box delete">
+                    <form action={deletemethod} method="POST">
+                      <input type="submit" value=""/>
+                    </form>
+                  </div>
+                </span>
+                <span>
+                  <a href={editLink}><div className="change-box edit"></div></a>
+                </span>
+                </> 
+                :
+                <></>
+              }
+              </h1>
+              <p>{tagList}</p>
+            </div>} />
+          <br/><br/>
+          <br/>
+          <TextContainer content={
+          <div>    
+            <p>{project.content}</p>
+          </div>
+        }/></div>
+    )  
+  
+  return <Container content={content} />
  }
  catch(e){
-  return (<LoadingIcon/>)
+  return (<Error type="404" message="project not found"/>)
  }
 }
 

@@ -18,6 +18,7 @@ function PortfolioList(props){
   }, [])
 
   let list = []
+
   for (let i = 0;i<projects.length;i++){
     const image = projects[i].image
     // link vars
@@ -36,13 +37,16 @@ function PortfolioList(props){
 
 function Portfolio(props){
 
+  const auth = props.auth
+  console.log(auth)
+
   const content = (
     <div className="portfolio-page">
       <Banner />
       <TextContainer content={
         <>
         
-        <h1> portfolio <span><a href="portfolio/create"><div className="change-box create"></div></a></span></h1>
+        <h1> portfolio {auth ? <span><a href="portfolio/create"><div className="change-box create"></div></a></span> : <span></span>}</h1>
         <p>Here are some of the portfolio Pieces I have made over the past few months<br/></p>
         </>
       }/>

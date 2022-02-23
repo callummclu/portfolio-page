@@ -1,8 +1,9 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
-
+import axios from 'axios'
 // Routing import
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 
 // Page imports
 import Home from './Pages/Homepage/Home'
@@ -11,6 +12,9 @@ import Contact from './Pages/ContactPage/Contact'
 import PortfolioItem from './Pages/PortfolioItem/PortfolioItem'
 import NewPost from './Pages/NewPost'
 import EditPost from './Pages/EditPost'
+import Login from './Pages/login'
+import Register from './Pages/register'
+import Error from './Pages/Error'
 
 // component imports
 import ScrollToTop from './ScrollToTop'
@@ -23,18 +27,32 @@ import './index.css'
 function App() {
   const [toggle, setToggle] = useState(false)
 
+  const [isAuth, setIsAuth] = useState({})
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const result = await axios(`/API/account/is_authenticated`)
+      setIsAuth(result.data.message)
+    }
+    fetchData();
+  }, [])
   return (
       <BrowserRouter>
         <Nav hamburgerToggle={[toggle,setToggle]}/>
-        <Sidebar show={toggle}/>
+        {isAuth ? <Sidebar auth="true" show={toggle}/> : <Sidebar show={toggle}/>}
           <ScrollToTop>
             <Routes> 
-              <Route path="/" element={<Home />} />
-              <Route path="portfolio" element={<Portfolio />}  />
-              <Route path="contact" element={<Contact />} />
-              <Route path="portfolio/:id" element={<PortfolioItem/>} />
-              <Route path="portfolio/create" element={<NewPost/>} />
-              <Route path="portfolio/:id/edit" element={<EditPost />}/>
+              <Route path="/" element={<Home auth={isAuth} />} />
+              <Route path="portfolio" element={<Portfolio auth={isAuth}/>}  />
+              <Route path="contact" element={<Contact auth={isAuth}/>} />
+              <Route path="portfolio/:id" element={<PortfolioItem auth={isAuth}/>} />
+              <Route path="portfolio/create" element={<NewPost auth={isAuth}/>} />
+              <Route path="portfolio/:id/edit" element={<EditPost auth={isAuth}/>}/>
+              <Route path="login" element={<Login />}/>
+              <Route path="register" element={<Register />}/>
+              <Route path="API" element={<Error type="404"/>}/>
+              <Route path="*" element={<Error type="404" message="page not found"/> }/>
             </Routes>
           </ScrollToTop>
       </BrowserRouter>
