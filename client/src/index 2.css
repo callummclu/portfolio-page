@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: 'helvetica', cursive;
+  background: rgb(242, 242, 242) !important;
+  color: rgb(60,60,60);
+}
+
+a {
+  text-decoration: none;
+  color: #77987C;
+
+}
+
+blockquote {
+  margin: 0;
+  margin-left: 15px;
+  padding-left: 15px;
+  border-left: 4px solid darkgray;
+  line-height: 30px;
+
+}
+
+hr {
+  background: lightgray;
+  border: 0.5px solid lightgray;
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+textarea{
+  height: 100px;
+  width: 100%;
+  max-width: 100%;
+  min-width: 140px;
+}
+
+code{
+  background: rgb(60,60,60);
+  border-radius: 5px;
+  color: white;
+  padding: 2.5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+@-webkit-keyframes autofill {
+    0%,100% {
+        color: #666;
+        background: transparent;
+    }
+}
+
+input:-webkit-autofill {
+    -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
+    -webkit-animation-name: autofill;
+    -webkit-animation-fill-mode: both;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.auth-card{
+  width: 300px;
+  height: auto;
+  margin: 50px auto;
+}
+
+@media screen and (max-width: 450px){
+  .auth-card{
+    width: calc(100% - 80px);
+  }
+}
+
+.auth-card input[type=email], 
+.auth-card input[type=password], 
+.auth-card input[type=name]{
+  width: calc(100% - 40px);
+  height: 50px;
+  font-size: 20px;
+  border-radius: 50px;
+  border-color: rgb(60,60,60);
+  border-style: solid;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-width: 2px;
+  background: white;
+}
+
+.auth-card label {
+  position: absolute;
+  margin-top: 10px;
+  margin-left: 30px;
+  background: white;
+  padding-left: 5px;
+  padding-right: 5px;
+  min-width: auto;
+  overflow-x: auto;
+}

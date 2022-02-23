@@ -47,7 +47,7 @@ function Home(){
     <>
       <Banner />
       <div>
-      <TextContainer style={{width:"calc(50% - 50px)", height:"250px",padding:"25px"}} content={
+      <TextContainer style={{width:"50%",height:"300px"}} content={        
         <>
           
           <h1><span className="grayout"># </span>Welcome</h1>
