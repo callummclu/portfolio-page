@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-import {Helmet} from 'react-helmet';
 import { useParams } from "react-router-dom";
 import './PortfolioItem.css'
 
@@ -17,10 +16,12 @@ function PortfolioItem(props){
   const auth = props.auth
 
   const [project ,setProject] = useState([])
+  const [user, setUser] = useState({})
   const { id } = useParams();
   const editmethod = `../../API/like/${id}?_method=PATCH`
   const deletemethod = `../../API/${id}?_method=DELETE`
   const editLink = `../../portfolio/${id}/edit`
+
   useEffect(()=>{
    let fetchLink = `/API/${id}`
     fetch(fetchLink)
@@ -30,22 +31,42 @@ function PortfolioItem(props){
       })
     },[id])
 
+     useEffect(()=>{
+      let fetchLink = `/API/account/is_authenticated`
+      fetch(fetchLink)
+        .then((response) => response.json())
+        .then((responseJson) => {
+          setUser(responseJson)
+        })
+    },[])   
 
-
-  
   try {
       let tags = project.tags
       let tagList = []
       for (let i = 0; i<tags.length; i++){
         tagList.push(<span className="tag">{tags[i]}</span>)
       }
+      let liked = false
+      if((user.message) == true ){
+        if ((user.likedposts).includes(id)){
+          liked = true
+        }        
+      }
+      let likes = project.likes
+
+      if(likes>999){
+        likes /= 1000
+        likes = likes.toString().slice(0,-1).slice(0,-1) + "k"
+      }
+
+
        let content = (
         <div>
-          <Banner />
+          <Banner/>
           <TextContainer content={
             <div>
               <h1>
-                {project.title}
+                <span className="title-heading">{project.title}</span>
                 {auth ?
                   <>
                 <span>
@@ -62,12 +83,29 @@ function PortfolioItem(props){
                 :
                 <></>
               }
+              <p style={{marginTop:"20px",marginBottom:"-5px"}}>
+                
+                {!liked ? 
+                <div className="change-box like-inactive"> 
+                  <form action={editmethod} method="POST">
+                    <input type="submit" name="likes" value=" "/>
+                  </form> 
+                  <p style={{display:"inline", position:"absolute",marginTop:"7.5px",marginLeft:"40px",fontSize:"15px"}}>{likes}</p>               
+                </div>
+                : 
+                <div className="change-box like-active">
+                  <form action={editmethod} method="POST">
+                    <input type="submit" name="likes" value=" "/>
+                  </form> 
+                  <p style={{display:"inline", position:"absolute",marginTop:"7.5px",marginLeft:"40px",fontSize:"15px"}}>{likes}</p>               
+  
+                </div>
+              }
+              </p>
               </h1>
               <p>{tagList}</p>
 
-              <form action={editmethod} method="POST">
-                <input type="submit" name="likes" value={"likes: " + project.likes}/>
-              </form>
+
             </div>} />
           <br/><br/>
           <br/>
@@ -78,7 +116,7 @@ function PortfolioItem(props){
         }/></div>
     )  
   
-  return <Container content={content} />
+  return <Container divstyle={{backgroundColor: "rgba(240, 240, 240,0.9)"}} content={content} />
  }
  catch(e){
   return (<Error type="404" message="project not found"/>)

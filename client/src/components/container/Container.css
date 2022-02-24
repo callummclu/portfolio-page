@@ -1,4 +1,10 @@
 .container.main{
+}
+
+
+.container>div{
+		backdrop-filter: blur(2px);
+
 	padding: 100px;
 	padding-left: 10%;
 	padding-right: 10%;

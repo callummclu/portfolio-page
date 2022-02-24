@@ -5,7 +5,10 @@ const mongoose = require('mongoose')
 var Schema = mongoose.Schema;
 
 var project = new Schema({
-	slug_title: String,
+	slug_title: {
+		type:String,
+		required: true
+	},
 	title: String,
 	tags: [String],
 	image: String,

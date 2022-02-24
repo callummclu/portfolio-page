@@ -10,9 +10,7 @@
   font-size: 60px;
   font-family: Asap;
   color: rgb(60,60,60);
-
 }
-
 @media screen and (max-width: 700px){
 	.name-container>h1 {
 	  line-height: 90px;

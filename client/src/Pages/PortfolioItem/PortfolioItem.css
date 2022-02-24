@@ -4,3 +4,35 @@
 	left: 50%;
 	transform: translate(-50%,-50%);
 }
+
+.title-heading{
+}
+.like-inactive {
+	overflow:  hidden;
+	border-color: transparent;
+	border-radius: 0;
+	background: url("https://img.icons8.com/material-outlined/96/000000/facebook-like--v1.png");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+}
+
+.like-active {
+	overflow:  hidden;
+	border-color: transparent;
+	border-radius: 0;
+	background: url(https://img.icons8.com/material-sharp/96/000000/facebook-like--v1.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+.like-active input, .like-inactive input{
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	position: absolute;
+	background: none;
+	border: none;
+	cursor: pointer;
+}

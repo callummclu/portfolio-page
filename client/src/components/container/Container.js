@@ -2,7 +2,7 @@ import "./Container.css"
 
 
 function Container(props){
-	return(<div className="container main">{props.content}</div>)
+	return(<div style={props.style} className="container main"><div style={props.divstyle}>{props.content}</div></div>)
 }
 
 export default Container
