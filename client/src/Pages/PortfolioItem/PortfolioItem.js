@@ -7,7 +7,9 @@ import './PortfolioItem.css'
 import Container from '../../components/container/Container'
 import Banner from '../../components/Banner/Banner'
 import TextContainer from '../../components/textContainer/TextContainer'
+import IndexList from '../../components/IndexList/IndexList'
 import Error from '../Error'
+import Figma from '../../components/figma/Figma'
 
 function PortfolioItem(props){
 
@@ -104,11 +106,13 @@ function PortfolioItem(props){
             </div>} />
           <br/><br/>
           <br/>
+          <IndexList />
+          <br/><br/>
           <TextContainer content={
           <div>  
             <ReactMarkdown>{project.content}</ReactMarkdown>
-            </div>
-        }/></div>
+          </div>
+        }/><Figma/></div>
     )  
   
   return <Container divstyle={{backgroundColor: "rgba(240, 240, 240,0.9)"}} content={content} />

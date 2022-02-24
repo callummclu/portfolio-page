@@ -1,0 +1,30 @@
+.index-list{
+	margin: 0 auto;
+	width: calc(80%);
+	height: auto;
+}
+
+.index-list a{
+	color: rgb(60,60,60);
+}
+
+.index-list ul{
+	list-style-type: upper-roman;
+}
+
+.index-list>ul{
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.index-list>ul ul{
+	font-size: 14px;
+	font-weight: normal;
+	list-style-type: lower-roman
+
+}
+
+.index-list hr {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
