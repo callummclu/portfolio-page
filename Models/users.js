@@ -21,7 +21,12 @@ const UserSchema  = new mongoose.Schema({
 		permissions :{
 			type: String,
 			default: 1
-		}
+		},
+		likedposts : {
+			type: [String],
+			default: []
+		},
+
 });
 const User= mongoose.model('User',UserSchema);
 

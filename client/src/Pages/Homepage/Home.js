@@ -48,12 +48,12 @@ function Home(){
       <Banner />
       <div>
       <TextContainer style={{width:"50%",height:"300px"}} content={        
-        <>
+        <div>
           
           <h1><span className="grayout"># </span>Welcome</h1>
           
           <blockquote>This is a small web app used to display all of my projects i have works on as an aspiring full stack developer. I will be updating the site will all of the new projects I work on in the near future!</blockquote>
-        </>
+        </div>
       }/>
       <div className="button-container" >
         <div><Link to="../../portfolio"><button className="home">Portfolio</button></Link></div>

@@ -18,7 +18,7 @@ function PortfolioItem(props){
 
   const [project ,setProject] = useState([])
   const { id } = useParams();
-
+  const editmethod = `../../API/like/${id}?_method=PATCH`
   const deletemethod = `../../API/${id}?_method=DELETE`
   const editLink = `../../portfolio/${id}/edit`
   useEffect(()=>{
@@ -65,7 +65,9 @@ function PortfolioItem(props){
               </h1>
               <p>{tagList}</p>
 
-              {/*<p>likes: {project.likes}</p>*/}
+              <form action={editmethod} method="POST">
+                <input type="submit" name="likes" value={"likes: " + project.likes}/>
+              </form>
             </div>} />
           <br/><br/>
           <br/>
