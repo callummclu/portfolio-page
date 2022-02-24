@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import ReactDOM from 'react-dom'
 import axios from 'axios'
-// Routing import
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-
 
 // Page imports
 import Home from './Pages/Homepage/Home'
@@ -26,10 +24,10 @@ import './index.css'
 
 function App() {
   const [toggle, setToggle] = useState(false)
-
   const [isAuth, setIsAuth] = useState({})
   const [permissions, setPermissions] = useState({})
 
+  let isAdmin = false
 
   useEffect(() => {
     const fetchData = async () => {
@@ -40,12 +38,10 @@ function App() {
     fetchData();
   }, [])
 
-  let isAdmin = false
   
-  if(permissions == "2"){
+  if(permissions === "2"){
     isAdmin = true
   }
-
   
   return (
       <BrowserRouter>
@@ -61,7 +57,6 @@ function App() {
               <Route path="portfolio/:id/edit" element={<EditPost auth={isAdmin}/>}/>
               <Route path="login" element={<Login />}/>
               <Route path="register" element={<Register />}/>
-              <Route path="API" element={<Error type="404"/>}/>
               <Route path="*" element={<Error type="404" message="page not found"/> }/>
             </Routes>
           </ScrollToTop>

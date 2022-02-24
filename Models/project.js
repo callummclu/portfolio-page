@@ -1,10 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 
-
-var Schema = mongoose.Schema;
-
-var project = new Schema({
+var project = new mongoose.Schema({
 	slug_title: {
 		type:String,
 		required: true

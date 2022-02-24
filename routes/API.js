@@ -4,11 +4,13 @@ var slugify = require('slugify')
 const accountRouter = require('./account')
 const User = require("../Models/users.js")
 
+// includes account route file.
 router.use('/account',accountRouter)
+
 const projectModel = require('../Models/project')
 
 
-// get all
+// get all post
 router.get('/', async (req,res)=>{
 	
 	try {
@@ -25,7 +27,12 @@ router.get('/', async (req,res)=>{
 	}
 })
 
-// create one
+// get one post
+router.get('/:id', getProject, (req,res)=>{
+	res.json(res.project)
+})
+
+// create one post
 router.post('/create', async (req,res) => {
 	const project = new projectModel({
 		title: req.body.title,
@@ -47,7 +54,7 @@ router.post('/create', async (req,res) => {
 	}
 })
 
-//delete one
+//delete one post
 router.delete('/:id', getProject, async (req,res)=>{
 	try {
 		await res.project.data.remove()
@@ -60,7 +67,7 @@ router.delete('/:id', getProject, async (req,res)=>{
 	}
 })
 
-// edit one 
+// edit one post
 router.patch('/:id', getProject, async (req,res)=>{
 	try {
 		res.project.data.title = req.body.title
@@ -75,6 +82,7 @@ router.patch('/:id', getProject, async (req,res)=>{
 	}
 })
 
+// like one post
 router.patch('/like/:id',getProject, async (req,res)=>{
 	try{
 		if(req.user){
@@ -100,12 +108,7 @@ router.patch('/like/:id',getProject, async (req,res)=>{
 	}
 })
 
-// get one
-router.get('/:id', getProject, (req,res)=>{
-	res.json(res.project)
-})
-
-
+// gets project from id (for use in :id routes)
 async function getProject(req,res,next){
 	let project
 	try {

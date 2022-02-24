@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import ReactMarkdown from 'react-markdown'
 
 import { useParams } from "react-router-dom";
 import './PortfolioItem.css'
@@ -7,8 +8,6 @@ import Container from '../../components/container/Container'
 import Banner from '../../components/Banner/Banner'
 import TextContainer from '../../components/textContainer/TextContainer'
 import Error from '../Error'
-import ReactMarkdown from 'react-markdown'
-
 
 function PortfolioItem(props){
 
@@ -22,7 +21,7 @@ function PortfolioItem(props){
   const editLink = `../../portfolio/${id}/edit`
 
   useEffect(()=>{
-   let fetchLink = `/API/${id}`
+    let fetchLink = `/API/${id}`
     fetch(fetchLink)
       .then((response) => response.json())
       .then((responseJson) => {
@@ -30,14 +29,14 @@ function PortfolioItem(props){
       })
     },[id])
 
-     useEffect(()=>{
-      let fetchLink = `/API/account/is_authenticated`
-      fetch(fetchLink)
-        .then((response) => response.json())
-        .then((responseJson) => {
-          setUser(responseJson)
-        })
-    },[])   
+  useEffect(()=>{
+    let fetchLink = `/API/account/is_authenticated`
+    fetch(fetchLink)
+      .then((response) => response.json())
+      .then((responseJson) => {
+        setUser(responseJson)
+      })
+  },[])   
 
   try {
       let tags = project.tags
@@ -58,8 +57,7 @@ function PortfolioItem(props){
         likes = likes.toString().slice(0,-1).slice(0,-1) + "k"
       }
 
-
-       let content = (
+      let content = (
         <div>
           <Banner/>
           <TextContainer content={
@@ -68,20 +66,20 @@ function PortfolioItem(props){
                 <span className="title-heading">{project.title}</span>
                 {auth ?
                   <>
-                <span>
-                  <div className="change-box delete">
-                    <form action={deletemethod} method="POST">
-                      <input type="submit" value=""/>
-                    </form>
-                  </div>
-                </span>
-                <span>
-                  <a href={editLink}><div className="change-box edit"></div></a>
-                </span>
-                </> 
-                :
-                <></>
-              }
+                    <span>
+                      <div className="change-box delete">
+                        <form action={deletemethod} method="POST">
+                          <input type="submit" value=""/>
+                        </form>
+                      </div>
+                    </span>
+
+                    <span>
+                      <a href={editLink}><div className="change-box edit"></div></a>
+                    </span>
+                  </> 
+                : <></>}
+
               <p style={{marginTop:"20px",marginBottom:"-5px"}}>
                 
                 {!liked ? 
@@ -103,8 +101,6 @@ function PortfolioItem(props){
               </p>
               </h1>
               <p>{tagList}</p>
-
-
             </div>} />
           <br/><br/>
           <br/>
@@ -116,10 +112,9 @@ function PortfolioItem(props){
     )  
   
   return <Container divstyle={{backgroundColor: "rgba(240, 240, 240,0.9)"}} content={content} />
- }
- catch(e){
-  return (<Error type="404" message="project not found"/>)
- }
+  } catch(e){
+    return (<Error type="404" message="project not found"/>)
+  }
 }
 
 export default PortfolioItem;

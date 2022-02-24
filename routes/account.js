@@ -5,6 +5,7 @@ const passport = require('passport')
 
 const User = require("../Models/users.js")
 
+// Logs User out
 router.get('/logout',(req,res)=>{
 	req.logout();
 	req.flash('success_msg','Now logged out');
@@ -12,6 +13,7 @@ router.get('/logout',(req,res)=>{
 
 })
 
+// registers new user
 router.post('/register',(req,res)=>{
 	const {name,email,password,password2} = req.body;
 	User.findOne({email : email}).exec((err,user)=>{
@@ -38,6 +40,7 @@ router.post('/register',(req,res)=>{
 	})
 })
 
+// logs in user
 router.post('/login',(req,res,next)=>{
 	passport.authenticate('local',{
 	successRedirect : '../../..',
@@ -46,6 +49,7 @@ router.post('/login',(req,res,next)=>{
 	})(req,res,next);
 })
 
+// returns if user is logged in, their permissions level, liked posts.
 router.get('/is_authenticated',(req,res)=>{
     if (req.user) {
         res.json({message:true,permissions:req.user.permissions,likedposts:req.user.likedposts});

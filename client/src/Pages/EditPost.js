@@ -4,16 +4,12 @@ import TextContainer from '../components/textContainer/TextContainer'
 import { useParams } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
 
-
-
 function EditPost(props){
   const { id } = useParams()
   const editmethod = `../../API/${id}?_method=PATCH`
   const [project ,setProject] = useState([])
   const auth = props.auth
   const [md, setMd] = useState("")
-
-
 
   useEffect(()=>{
    let fetchLink = `/API/${id}`
@@ -23,7 +19,6 @@ function EditPost(props){
         setProject(responseJson.data);
       })
     },[id])
-
 
     let curr_tags = []
     try{
@@ -36,7 +31,18 @@ function EditPost(props){
     }
   let content = (<></>)
 
-  {!auth ? content = <><h1>404</h1><p>you do not have access to this page.</p></> : content = (
+  !auth ? 
+
+    content = (
+      <>
+        <h1>404</h1>
+        <p>you do not have access to this page.</p>
+      </>
+    )
+
+    : 
+
+    content = (
 
     <div className="post">
         <h1> Edit Post </h1>
@@ -58,7 +64,6 @@ function EditPost(props){
       </div>
   
   )
-  }
 
   return <Container content={<TextContainer content={content}/>}/>
 }

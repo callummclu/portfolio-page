@@ -12,7 +12,13 @@ function Contact(){
   const content = (
     <>
       <Banner />
-      <TextContainer content={<><h1>Contact</h1><p>Here are some of my contact details feel free to contact me using any of the below options</p></>}/>
+      <TextContainer content={
+        <>
+          <h1>Contact</h1>
+          <p>Here are some of my contact details feel free to contact me using any of the below options</p>
+        </>
+      }/>
+      
       <div className="contact-box-container">
         <ContactBox text="callummcluskey100@gmail.com" icon={email_icon} isEmail="true" />
         <ContactBox text={<a href="https://www.linkedin.com/in/callum-mcluskey-69a6b7226/">Callum McLuskey</a>} icon={linkedIn_icon}/>
