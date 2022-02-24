@@ -26,6 +26,9 @@
 	background-repeat: no-repeat;
 }
 
+.title-heading{
+	text-transform: capitalize;
+}
 
 .like-active input, .like-inactive input{
 	width: 30px;

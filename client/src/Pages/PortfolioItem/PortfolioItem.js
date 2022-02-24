@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import './PortfolioItem.css'
 
 import Container from '../../components/container/Container'
-import LoadingIcon from '../../components/LoadingCircle/LoadingIcon'
 import Banner from '../../components/Banner/Banner'
 import TextContainer from '../../components/textContainer/TextContainer'
 import Error from '../Error'
@@ -47,7 +46,7 @@ function PortfolioItem(props){
         tagList.push(<span className="tag">{tags[i]}</span>)
       }
       let liked = false
-      if((user.message) == true ){
+      if((user.message) === true ){
         if ((user.likedposts).includes(id)){
           liked = true
         }        

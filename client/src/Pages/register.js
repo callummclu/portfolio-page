@@ -15,7 +15,7 @@ export default function Register(){
     <input
       type="name"
       name="name"
-      placeholder="callum"
+      placeholder="user"
     />
   
 </div><br/>

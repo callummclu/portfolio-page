@@ -3,7 +3,6 @@ import TextContainer from '../../components/textContainer/TextContainer'
 import Banner from '../../components/Banner/Banner'
 import {Link} from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
-import LoadingIcon from '../../components/LoadingCircle/LoadingIcon'
 
 import './Home.css'
 

@@ -3,7 +3,6 @@ import Container from '../../components/container/Container'
 import './PortfolioPage.css'
 import TextContainer from '../../components/textContainer/TextContainer'
 import ProjectContainer from '../../components/ProjectContainer/ProjectContainer'
-import LoadingIcon from '../../components/LoadingCircle/LoadingIcon'
 import Banner from '../../components/Banner/Banner'
 
 function PortfolioList(props){
@@ -46,7 +45,7 @@ function Portfolio(props){
         <>
         
         <h1> portfolio {auth ? <span><a href="portfolio/create"><div className="change-box create"></div></a></span> : <span></span>}</h1>
-        <p>Here are some of the portfolio Pieces I have made over the past few months<br/></p>
+        <p>Here are some projects i've been working on over the past few months.<br/><br/> These posts will go into depth of technology choices aswell as show off the current state of the projects.<br/></p>
         </>
       }/>
       <br/><br/>
