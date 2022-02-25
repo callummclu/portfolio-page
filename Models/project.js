@@ -14,7 +14,10 @@ var project = new mongoose.Schema({
 	likes :{
 		type: String,
 		default: 0
-	}
+	},
+	figma : String,
+	github : String,
+	index_summary: String
 });
 
 

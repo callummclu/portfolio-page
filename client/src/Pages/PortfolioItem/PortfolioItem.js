@@ -9,7 +9,7 @@ import Banner from '../../components/Banner/Banner'
 import TextContainer from '../../components/textContainer/TextContainer'
 import IndexList from '../../components/IndexList/IndexList'
 import Error from '../Error'
-import Figma from '../../components/figma/Figma'
+import LinkBox from '../../components/figma/Figma'
 
 function PortfolioItem(props){
 
@@ -105,14 +105,16 @@ function PortfolioItem(props){
               <p>{tagList}</p>
             </div>} />
           <br/><br/>
-          <br/>
-          <IndexList />
+          <IndexList content={<ReactMarkdown>{project.index_summary || `### ${project.title}\n---\n - content`}</ReactMarkdown>}/>
           <br/><br/>
           <TextContainer content={
           <div>  
             <ReactMarkdown>{project.content}</ReactMarkdown>
           </div>
-        }/><Figma/></div>
+        }/>
+        <LinkBox title="Figma" link={project.figma}/>
+        <LinkBox title="Github" link={project.github}/>
+        </div>
     )  
   
   return <Container divstyle={{backgroundColor: "rgba(240, 240, 240,0.9)"}} content={content} />

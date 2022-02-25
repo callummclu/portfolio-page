@@ -13,6 +13,10 @@
 	height: 60px;
 }
 
+.logo {
+	width: 10px !important;
+}
+
 .link-display span{
 	font-size: 30px;
 	position: absolute;
@@ -31,13 +35,15 @@
 
 .demo-display{
 	width: calc(100% - 20px);
-	height: auto;
 	background: white;
 	border-radius: 5px;
 	border: 1px solid lightgray;
 	margin-top: 10px;	
 	padding: 10px;
+}
 
+.demo-display img{
+	width: calc(100%);
 }
 
 .demo-display iframe {

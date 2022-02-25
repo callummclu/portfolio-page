@@ -10,6 +10,7 @@ function EditPost(props){
   const [project ,setProject] = useState([])
   const auth = props.auth
   const [md, setMd] = useState("")
+  const [mdSummary, setMdSummary] = useState('')
 
   useEffect(()=>{
    let fetchLink = `/API/${id}`
@@ -55,6 +56,13 @@ function EditPost(props){
           <input type="text" defaultValue={project.image} name="image" /><br/> 
           <label>description</label>
           <textarea type="text" defaultValue={project.description} name="description"/>
+          <label>Index Summary</label>
+          <textarea onChange={event=>setMdSummary(event.target.value)} type="text" defaultValue={project.index_summary} name="index_summary"/><br/>
+          <ReactMarkdown>{mdSummary}</ReactMarkdown>
+          <label>Github Link</label><br/>
+          <input type="text" defaultValue={project.github} name="github"/><br/> 
+          <label>Figma Link</label><br/>
+          <input type="text" defaultValue={project.figma} name="figma"/><br/> 
           <label>content</label><br/>
           <textarea onChange={event=>setMd(event.target.value)} type="text" defaultValue={project.content} name="content" /><br/><br/>
           <ReactMarkdown>{md || "type in content to start"}</ReactMarkdown>

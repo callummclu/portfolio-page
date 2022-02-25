@@ -10,6 +10,7 @@ export default function NewPost(props){
 
   const [tagsInList, setTagsInList] = useState([])
   const [md, setMd] = useState('')
+  const [mdSummary, setMdSummary] = useState('')
 
   const addTagInput = () => {
     setTagsInList([tagsInList,<><input type="text" name="tags[]"/><br/></>])
@@ -38,6 +39,19 @@ export default function NewPost(props){
           {/* description input */}
           <label>description</label>
           <textarea type="text" name="description"/>
+          <br/>
+          {/* index input */}
+          <label>Index Summary</label>
+          <textarea onChange={event=>setMdSummary(event.target.value)} type="text" name="index_summary"/><br/>
+          <ReactMarkdown>{mdSummary}</ReactMarkdown>
+
+          {/* Github Link input*/}
+          <label>Github Link</label><br/>
+          <input type="text" name="github"/><br/> 
+
+          {/* Figma Link input*/}
+          <label>Figma Link</label><br/>
+          <input type="text" name="figma"/><br/> 
 
           {/* content input */}
           <label>content</label><br/>
