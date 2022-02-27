@@ -1,0 +1,79 @@
+.image-container-field{
+	margin: 25px;
+	text-align: center;
+
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.scrollable-view::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollable-view{
+	margin: 0 auto;
+	overflow-x: auto;
+	white-space: nowrap;
+	width: 60vw;
+	-ms-overflow-style: none;
+  	scrollbar-width: none; 
+
+}
+
+.scrollable-view div {
+		display: inline-block;
+
+	width: 60vw;
+	height: calc(33.75vw);
+	background: red;
+
+}
+
+.scrollable-view div:nth-child(even){
+	background: blue;
+}
+
+.image-control{
+	display: inline-block;
+	position: absolute;
+	width: 30vw;
+	height: 30px;
+	line-height: 30px;
+	text-align: center;
+	background: rgba(0,0,0,0.15);
+	margin-top: -34px;
+	color: white;
+}
+
+.image-control:hover{
+	background: rgba(0,0,0,0.5);
+	cursor: pointer;
+	color: rgba(255, 255, 255, 1.0);
+
+}
+
+.prev{
+	margin-left: -30vw;
+}
+
+.scrollable-view ~ div {
+	opacity: 0;
+	transition-duration: 0.25s;
+
+}
+
+.scrollable-view ~ div:hover{
+	opacity: 1;
+}
+
+.scrollable-view:hover ~ div{
+	opacity: 1;
+}
