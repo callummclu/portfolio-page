@@ -12,16 +12,21 @@ import Error from '../Error'
 import LinkBox from '../../components/figma/Figma'
 
 function PortfolioItem(props){
-
-  const auth = props.auth
-
+  // used for getting project data
   const [project ,setProject] = useState([])
+
+  // used for like system and checking if authorised
   const [user, setUser] = useState({})
+
+  // sites url slug title
   const { id } = useParams();
+
+  // REST API ACCESS
   const editmethod = `../../API/like/${id}?_method=PATCH`
   const deletemethod = `../../API/${id}?_method=DELETE`
   const editLink = `../../portfolio/${id}/edit`
 
+  // gets post data
   useEffect(()=>{
     let fetchLink = `/API/${id}`
     fetch(fetchLink)
@@ -31,6 +36,7 @@ function PortfolioItem(props){
       })
     },[id])
 
+  // gets users data
   useEffect(()=>{
     let fetchLink = `/API/account/is_authenticated`
     fetch(fetchLink)
@@ -39,110 +45,38 @@ function PortfolioItem(props){
         setUser(responseJson)
       })
   },[])   
-  let activity = <></>
+
   try {
-      let figmaActive = false
-      let githubActive = false
-      if (project.figma !== ""){
-        figmaActive = true
-      }
-      if (project.github !== ""){
-        githubActive = true
-      }
-      switch(project.activity){
-        case "inactive":
-          activity = <div className="activity-indicator inactive">inactive</div>
-          break
-        case "in progress":
-          activity = <div className="activity-indicator in-progress">in progress</div>
-          break
-        case "finished":
-          activity = <div className="activity-indicator active">finished</div>
-          break
-        default:
-          activity = <div className="activity-indicator not-available">not available</div>
-          break
-      }
-      let tags = project.tags
-      let tagList = []
-      for (let i = 0; i<tags.length; i++){
-        tagList.push(<span className="tag">{tags[i]}</span>)
-      }
       let liked = false
       if((user.message) === true ){
         if ((user.likedposts).includes(id)){
           liked = true
         }        
       }
-      let likes = project.likes
+    let content = (
+      <>
+       {user.message ? <><span><form action={deletemethod} method="POST"><input type="submit" value="delete"/></form></span><span><a href={editLink}><button>edit</button></a></span></> : <></>}<br/><br/>
+       {!liked ? <><form action={editmethod} method="POST"><input type="submit" name="likes" value="like"/></form><p>{project.likes}</p></> : <><form action={editmethod} method="POST"><input type="submit" name="likes" value="unlike"/></form><p>{project.likes}</p></>} 
+        {/* TITLE DATA */}<br/><br/>
+          {project.title}
 
-      if(likes>999){
-        likes /= 1000
-        likes = likes.toString().slice(0,-1).slice(0,-1) + "k"
-      }
-
-      let content = (
-        <div>
-          <Banner/>
-          <TextContainer content={
-            <div>
-              <h1>
-                <span className="title-heading">{project.title}</span>
-                {auth ?
-                  <>
-                    <span>
-                      <div className="change-box delete">
-                        <form action={deletemethod} method="POST">
-                          <input type="submit" value=""/>
-                        </form>
-                      </div>
-                    </span>
-
-                    <span>
-                      <a href={editLink}><div className="change-box edit"></div></a>
-                    </span>
-                  </> 
-                : <></>}
-
-              <p style={{marginTop:"20px",marginBottom:"-5px"}}>
-                
-                {!liked ? 
-                <div className="change-box like-inactive"> 
-                  <form action={editmethod} method="POST">
-                    <input type="submit" name="likes" value=" "/>
-                  </form> 
-                  <p style={{display:"inline", position:"absolute",marginTop:"7.5px",marginLeft:"40px",fontSize:"15px"}}>{likes}</p>               
-                </div>
-                : 
-                <div className="change-box like-active">
-                  <form action={editmethod} method="POST">
-                    <input type="submit" name="likes" value=" "/>
-                  </form> 
-                  <p style={{display:"inline", position:"absolute",marginTop:"7.5px",marginLeft:"40px",fontSize:"15px"}}>{likes}</p>               
+        {/* TAGS DATA */}<br/><br/>
+          {project.tags}
+        {/* ACTIVITY INDICATOR DATA */}<br/><br/>
+          {project.activity}
+        {/* INDEX SUMMARY DATA (MARKDOWN) */}<br/><br/>
+          {project.index_summary}
+        {/* MAIN POST CONTENT DATA (MARKDOWN) to use markdown display (<ReactMarkdown>...</ReactMarkdown> */}<br/><br/>
+          {project.content}
+        {/* FIGMA LINK */}<br/><br/>
+          {project.figma}
+        {/* GITHUB LINK */}<br/><br/>
+          {project.github}
+        }
+      </>
+    )
   
-                </div>
-              }
-              </p>
-              </h1>
-              <p>{tagList}</p>
-            </div>} />
-          <br/><br/>
-          <IndexList content={<ReactMarkdown>{project.index_summary || `### ${project.title}\n---\n - content`}</ReactMarkdown>}/>
-          <br/><br/>
-          <TextContainer content={
-          <div>
-            <br/>
-            <span>{activity}</span>
-            <ReactMarkdown>{project.content}</ReactMarkdown>
-            }
-          </div>
-        }/>
-        {figmaActive ? <LinkBox title="Figma" link={project.figma}/> : <></>}
-        {githubActive ? <LinkBox title="Github" link={project.github}/> : <></>}
-        </div>
-    )  
-  
-  return <Container divstyle={{backgroundColor: "rgba(240, 240, 240,0.9)"}} content={content} />
+  return <Container content={content} />
   } catch(e){
     return (<Error type="404" message="project not found"/>)
   }
