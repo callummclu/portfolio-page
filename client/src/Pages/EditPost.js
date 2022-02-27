@@ -22,7 +22,58 @@ function EditPost(props){
     },[id])
 
     let curr_tags = []
+    let activity = <></>
     try{
+      switch(project.activity){
+        case "inactive":
+          activity = (
+            <>
+              <input type="radio" name="activity" value="inactive" checked="checked"/>
+              <label>inactive</label><br/> 
+              <input type="radio" name="activity" value="in progress" />
+              <label>in progress</label><br/> 
+              <input type="radio" name="activity" value="finished" />
+              <label>complete</label><br/> 
+            </>          
+          )
+          break;
+        case "in progress":
+          activity = (
+            <>
+              <input type="radio" name="activity" value="inactive" />
+              <label>inactive</label><br/> 
+              <input type="radio" name="activity" value="in progress" checked="checked"/>
+              <label>in progress</label><br/> 
+              <input type="radio" name="activity" value="finished" />
+              <label>complete</label><br/>               
+            </>
+          )
+          break
+        case "finished":
+          activity = (
+            <>
+              <input type="radio" name="activity" value="inactive" />
+              <label>inactive</label><br/> 
+              <input type="radio" name="activity" value="in progress" />
+              <label>in progress</label><br/> 
+              <input type="radio" name="activity" value="finished" checked="checked"/>
+              <label>complete</label><br/>                             
+            </>
+          )
+          break
+        default:
+          activity = (
+            <>
+              <input type="radio" name="activity" value="inactive" />
+              <label>inactive</label><br/> 
+              <input type="radio" name="activity" value="in progress" />
+              <label>in progress</label><br/> 
+              <input type="radio" name="activity" value="finished"/>
+              <label>complete</label><br/>                 
+            </>
+          )
+      }
+
       for (var i = 0 ; i < (project.tags).length; i++) {  
         curr_tags.push(<span className="tag">{project.tags[i]}</span>)
       }
@@ -48,22 +99,27 @@ function EditPost(props){
     <div className="post">
         <h1> Edit Post </h1>
         <form action={editmethod} method="POST">
-          <label> title </label><br/>
+          <label> Title </label><br/>
           <input type="text" defaultValue={project.title} name="title"/><br/>
-          <label>tags </label><br/>
-          <span>{curr_tags}</span><br/>
+          <br/>
+          <label>Tags </label><br/>
+          <span>{curr_tags}</span><br/><br/>
+          <label>Activity</label><br/>
+          <div style={{paddingLeft:"25px"}}>
+          {activity}
+          </div><br/>
           <label>Banner Image</label><br/>
-          <input type="text" defaultValue={project.image} name="image" /><br/> 
-          <label>description</label>
-          <textarea type="text" defaultValue={project.description} name="description"/>
+          <input type="text" defaultValue={project.image} name="image" /><br/><br/> 
+          <label>Description</label>
+          <textarea type="text" defaultValue={project.description} name="description"/><br/><br/>
           <label>Index Summary</label>
           <textarea onChange={event=>setMdSummary(event.target.value)} type="text" defaultValue={project.index_summary} name="index_summary"/><br/>
-          <ReactMarkdown>{mdSummary}</ReactMarkdown>
+          <ReactMarkdown>{mdSummary}</ReactMarkdown><br/>
           <label>Github Link</label><br/>
-          <input type="text" defaultValue={project.github} name="github"/><br/> 
+          <input type="text" defaultValue={project.github} name="github"/><br/> <br/>
           <label>Figma Link</label><br/>
-          <input type="text" defaultValue={project.figma} name="figma"/><br/> 
-          <label>content</label><br/>
+          <input type="text" defaultValue={project.figma} name="figma"/><br/><br/> 
+          <label>Content</label><br/>
           <textarea onChange={event=>setMd(event.target.value)} type="text" defaultValue={project.content} name="content" /><br/><br/>
           <ReactMarkdown>{md || "type in content to start"}</ReactMarkdown>
 

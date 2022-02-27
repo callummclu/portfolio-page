@@ -17,7 +17,11 @@ var project = new mongoose.Schema({
 	},
 	figma : String,
 	github : String,
-	index_summary: String
+	index_summary: String,
+	activity: {
+		type: String,
+		default: 0
+	}
 });
 
 

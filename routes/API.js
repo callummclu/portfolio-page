@@ -45,6 +45,7 @@ router.post('/create', async (req,res) => {
 		github: req.body.github,
 		figma: req.body.figma,
 		index_summary: req.body.index_summary,
+		activity: req.body.activity,
 	})
 	try {
 		const newProject = await project.save()
@@ -81,6 +82,7 @@ router.patch('/:id', getProject, async (req,res)=>{
 		res.project.data.github = req.body.github
 		res.project.data.figma = req.body.figma
 		res.project.data.index_summary = req.body.index_summary
+		res.project.data.activity = req.body.activity
 
 
 		await res.project.data.save()

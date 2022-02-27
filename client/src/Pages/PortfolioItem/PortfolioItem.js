@@ -39,8 +39,22 @@ function PortfolioItem(props){
         setUser(responseJson)
       })
   },[])   
-
+  let activity = <></>
   try {
+      switch(project.activity){
+        case "inactive":
+          activity = <div className="activity-indicator inactive">inactive</div>
+          break
+        case "in progress":
+          activity = <div className="activity-indicator in-progress">in progress</div>
+          break
+        case "finished":
+          activity = <div className="activity-indicator active">finished</div>
+          break
+        default:
+          activity = <div className="activity-indicator not-available">not available</div>
+          break
+      }
       let tags = project.tags
       let tagList = []
       for (let i = 0; i<tags.length; i++){
@@ -108,8 +122,11 @@ function PortfolioItem(props){
           <IndexList content={<ReactMarkdown>{project.index_summary || `### ${project.title}\n---\n - content`}</ReactMarkdown>}/>
           <br/><br/>
           <TextContainer content={
-          <div>  
+          <div>
+            <br/>
+            <span>{activity}</span>
             <ReactMarkdown>{project.content}</ReactMarkdown>
+            }
           </div>
         }/>
         <LinkBox title="Figma" link={project.figma}/>

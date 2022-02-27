@@ -32,6 +32,15 @@ export default function NewPost(props){
           <input type="text" name="tags[]"/><br/>
           {tagsInList.map(entry => <>{entry}</>)}
 
+          <label>Activity</label><br/>
+
+          <input type="radio" name="activity" value="inactive" />
+          <label>inactive</label><br/> 
+          <input type="radio" name="activity" value="in progress" />
+          <label>in progress</label><br/> 
+          <input type="radio" name="activity" value="finished" />
+          <label>complete</label><br/> 
+
           {/* banner image input*/}
           <label>Banner Image</label><br/>
           <input type="text" name="image"/><br/> 

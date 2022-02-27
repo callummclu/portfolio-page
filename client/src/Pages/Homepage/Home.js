@@ -43,7 +43,9 @@ function Home(){
       <TextContainer style={{width:"50%",height:"300px"}} content={        
         <div>
           <h1><span className="grayout"># </span>Welcome</h1>
-          <blockquote>This is a small web app used to display all of my projects i have works on as an aspiring full stack developer. I will be updating the site will all of the new projects I work on in the near future!</blockquote>
+          <blockquote style={{borderLeft:"0"}}>
+            This is a small web app used to display all of my projects i have worked on as an aspiring full stack developer. I will be updating the site will all of the new projects I work on in the near future!
+          </blockquote>
         </div>
       }/>
         <div className="button-container" >

@@ -39,3 +39,34 @@
 	border: none;
 	cursor: pointer;
 }
+
+.activity-indicator{
+	height: 20px;
+	padding: 5px;
+	padding-left: 40px;
+	background: grey;
+	color: white;
+	border-radius: 25px;
+}
+.activity-indicator::before{
+	content: "";
+	width: 15px;
+	height: 15px;
+	margin-top: 2.5px;
+	margin-left: -25px;
+	background: white;
+	position: absolute;
+	border-radius: 50%;
+}
+
+.activity-indicator.in-progress{
+	background: orange !important;
+}
+.activity-indicator.inactive{
+	background: red !important;
+}
+.activity-indicator.active{
+	background: green !important;
+}
+
+
