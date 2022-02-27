@@ -10,7 +10,6 @@ import TextContainer from '../../components/textContainer/TextContainer'
 import IndexList from '../../components/IndexList/IndexList'
 import Error from '../Error'
 import LinkBox from '../../components/figma/Figma'
-import ImageContainer from '../../components/ImageContainer/ImageContainer'
 
 function PortfolioItem(props){
 
@@ -135,9 +134,9 @@ function PortfolioItem(props){
             <br/>
             <span>{activity}</span>
             <ReactMarkdown>{project.content}</ReactMarkdown>
+            }
           </div>
         }/>
-        <ImageContainer/>
         {figmaActive ? <LinkBox title="Figma" link={project.figma}/> : <></>}
         {githubActive ? <LinkBox title="Github" link={project.github}/> : <></>}
         </div>
