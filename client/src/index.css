@@ -20,6 +20,23 @@ blockquote {
 
 }
 
+input[type=text] {
+  font-size: 20px;
+  color: gray;
+  transition-duration: 0.25s;
+  width: 150px;
+}
+
+input[type=text]:focus{
+  border: 0;
+  border-bottom: 1px solid darkgray;
+  outline: none;
+  color: black;
+  border-color: green;
+  width: 500px;
+
+}
+
 hr {
   background: lightgray;
   border: 0.5px solid lightgray;
@@ -99,4 +116,15 @@ input:-webkit-autofill:active  {
   padding-right: 5px;
   min-width: auto;
   overflow-x: auto;
+}
+
+.submit-button{
+  width: 75px;
+  height: 25px;
+  border-radius: 25px;
+  border: 1.5px solid black;
+  cursor: pointer;
+}
+.submit-button:hover{
+  background: lightgray;
 }

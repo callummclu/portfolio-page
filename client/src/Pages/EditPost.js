@@ -121,8 +121,7 @@ function EditPost(props){
           <input type="text" defaultValue={project.figma} name="figma"/><br/><br/> 
           <label>Content</label><br/>
           <textarea onChange={event=>setMd(event.target.value)} type="text" defaultValue={project.content} name="content" /><br/><br/>
-          <ReactMarkdown>{md || "type in content to start"}</ReactMarkdown>
-
+          <ReactMarkdown>{md}</ReactMarkdown>
           <input type="submit" value="save changes"/>
         </form>
       </div>

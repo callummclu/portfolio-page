@@ -46,6 +46,7 @@ router.post('/create', async (req,res) => {
 		figma: req.body.figma,
 		index_summary: req.body.index_summary,
 		activity: req.body.activity,
+
 	})
 	try {
 		const newProject = await project.save()
@@ -86,7 +87,7 @@ router.patch('/:id', getProject, async (req,res)=>{
 
 
 		await res.project.data.save()
-		res.redirect(`/portfolio`)
+		res.redirect(`/portfolio/${req.params.id}`)
 	} catch (err) {
 		res.status(400).json({message: err.message})
 	}

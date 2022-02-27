@@ -24,7 +24,7 @@ export default function Login(){
 				</div>
 				<br/>
 				{/* submit input */}
-				<button type="submit" class="btn btn-primary btn-block">Login</button>
+				<button type="submit" class="submit-button">Login</button>
 				<br/><br/>
 				<span>Don't have an account? </span><a href="/register">create account</a>
 			</form>

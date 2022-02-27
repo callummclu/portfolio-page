@@ -41,6 +41,14 @@ function PortfolioItem(props){
   },[])   
   let activity = <></>
   try {
+      let figmaActive = false
+      let githubActive = false
+      if (project.figma !== ""){
+        figmaActive = true
+      }
+      if (project.github !== ""){
+        githubActive = true
+      }
       switch(project.activity){
         case "inactive":
           activity = <div className="activity-indicator inactive">inactive</div>
@@ -129,8 +137,8 @@ function PortfolioItem(props){
             }
           </div>
         }/>
-        <LinkBox title="Figma" link={project.figma}/>
-        <LinkBox title="Github" link={project.github}/>
+        {figmaActive ? <LinkBox title="Figma" link={project.figma}/> : <></>}
+        {githubActive ? <LinkBox title="Github" link={project.github}/> : <></>}
         </div>
     )  
   

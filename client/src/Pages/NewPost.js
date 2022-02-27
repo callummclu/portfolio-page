@@ -25,12 +25,12 @@ export default function NewPost(props){
 
           {/* Title field input*/}
           <label> title </label><br/>
-          <input type="text" name="title" required/><br/>
+          <input type="text" name="title" required/><br/><br/>
 
           {/* tag array field input*/}
           <label>tags </label><input type="button" onClick={addTagInput} value="Add" /><br/>
           <input type="text" name="tags[]"/><br/>
-          {tagsInList.map(entry => <>{entry}</>)}
+          {tagsInList.map(entry => <>{entry}</>)}<br/><br/>
 
           <label>Activity</label><br/>
 
@@ -39,28 +39,28 @@ export default function NewPost(props){
           <input type="radio" name="activity" value="in progress" />
           <label>in progress</label><br/> 
           <input type="radio" name="activity" value="finished" />
-          <label>complete</label><br/> 
+          <label>complete</label><br/><br/>
 
           {/* banner image input*/}
           <label>Banner Image</label><br/>
-          <input type="text" name="image"/><br/> 
+          <input type="text" name="image"/><br/> <br/>
 
           {/* description input */}
           <label>description</label>
           <textarea type="text" name="description"/>
-          <br/>
+          <br/><br/>
           {/* index input */}
           <label>Index Summary</label>
           <textarea onChange={event=>setMdSummary(event.target.value)} type="text" name="index_summary"/><br/>
-          <ReactMarkdown>{mdSummary}</ReactMarkdown>
+          <ReactMarkdown>{mdSummary}</ReactMarkdown><br/>
 
           {/* Github Link input*/}
           <label>Github Link</label><br/>
-          <input type="text" name="github"/><br/> 
+          <input type="text" name="github"/><br/> <br/>
 
           {/* Figma Link input*/}
           <label>Figma Link</label><br/>
-          <input type="text" name="figma"/><br/> 
+          <input type="text" name="figma"/><br/> <br/>
 
           {/* content input */}
           <label>content</label><br/>

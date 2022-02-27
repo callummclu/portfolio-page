@@ -28,7 +28,7 @@ export default function Register(){
           <input type="password" name="password2" placeholder="********" />
         </div><br/>
 
-        <button type="submit" class="btn btn-primary btn-block">Register</button>
+        <button type="submit" class="submit-button">Register</button>
       </form>
       <br/>
       <p>Have An Account? <a href="/login">Login</a></p>
