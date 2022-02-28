@@ -19,7 +19,7 @@ function Contact(){
         </>
       }/>
       
-      <div className="contact-box-container">
+      <div style={{paddingBottom:"25px"}} className="contact-box-container">
         <ContactBox text="callummcluskey100@gmail.com" icon={email_icon} isEmail="true" />
         <ContactBox text={<a href="https://www.linkedin.com/in/callum-mcluskey-69a6b7226/">Callum McLuskey</a>} icon={linkedIn_icon}/>
         <ContactBox text={<a href="https://github.com/callummclu">callummclu</a>} icon={github_icon}/>
