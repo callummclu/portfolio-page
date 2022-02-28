@@ -10,7 +10,6 @@ var project = new mongoose.Schema({
 	tags: [String],
 	image: String,
 	content: String,
-	description: String,
 	likes :{
 		type: String,
 		default: 0

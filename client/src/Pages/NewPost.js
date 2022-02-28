@@ -45,10 +45,6 @@ export default function NewPost(props){
           <label>Banner Image</label><br/>
           <input type="text" name="image"/><br/> <br/>
 
-          {/* description input */}
-          <label>description</label>
-          <textarea type="text" name="description"/>
-          <br/><br/>
           {/* index input */}
           <label>Index Summary</label>
           <textarea onChange={event=>setMdSummary(event.target.value)} type="text" name="index_summary"/><br/>

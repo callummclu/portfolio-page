@@ -93,13 +93,13 @@ function PortfolioItem(props){
                     <span>
                       <div className="change-box delete">
                         <form action={deletemethod} method="POST">
-                          <input type="submit" value=""/>
+                          <input type="submit" value="delete"/>
                         </form>
                       </div>
                     </span>
 
                     <span>
-                      <a href={editLink}><div className="change-box edit"></div></a>
+                      <a href={editLink}><div className="change-box edit">edit</div></a>
                     </span>
                   </> 
                 : <></>}

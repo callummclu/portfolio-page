@@ -33,7 +33,7 @@
 }
 
 .sidebar a:last-child{
-	color: white !important;
+	color: darkgray !important;
 }
 
 .sidebar a:hover {
@@ -41,17 +41,14 @@
 }
 
 .sidebar button {
-	position: absolute;
 	bottom: -2px;
-	left: 0;
-	width: 100%;
 	border: 0;
 	padding: 5px;
 	padding-left: 20px;
 	padding-right: 20px;
 	font-size: 20px;
+	background: none;
 	padding: 10px;
-	background: #f8f5f2;
 	color: #222525 ;
 	cursor: pointer;
 }

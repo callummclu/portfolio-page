@@ -39,7 +39,6 @@ router.post('/create', async (req,res) => {
 		slug_title: slugify(req.body.title),
 		tags: req.body.tags,
 		image: req.body.image,
-		description: req.body.description,
 		content: req.body.content,
 		likes: 0,
 		github: req.body.github,
@@ -79,7 +78,6 @@ router.patch('/:id', getProject, async (req,res)=>{
 		res.project.data.slug_title = slugify(req.body.title)
    		res.project.data.image = req.body.image   
 		res.project.data.content = req.body.content
-		res.project.data.description = req.body.description
 		res.project.data.github = req.body.github
 		res.project.data.figma = req.body.figma
 		res.project.data.index_summary = req.body.index_summary

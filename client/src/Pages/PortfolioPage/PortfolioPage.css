@@ -41,51 +41,31 @@
 	height: 30px;
 	margin-top: -10px;
 	margin-right: -5px;
-	border-radius: 5px;
-	border: 4px solid rgb(60,60,60);
 
 }
 
 .edit{
+	width: auto;
+	height: auto;
 	float: right;
-	background: rgb(60,60,60);;
-	border-color: rgb(60,60,60);;
+	font-size: 15px;
 	margin-right: 15px;
-	filter: invert(100%);
-	background-image: url("https://img.icons8.com/material-outlined/96/000000/edit--v1.png");
-	background-size: contain;
 }
 
 .delete{
+	margin-top: -26px;
+	width: auto;
+	height: auto;
 	float: right;
-	background-color: rgb(36, 171, 191);
-	border-color: rgb(36, 171, 191);
 
-	background-image: url("https://img.icons8.com/material-outlined/96/000000/filled-trash.png");
-	filter: invert(100%);
-	background-size: contain;
-
-	overflow: hidden;
-	text-align: center;
 }
 
-.delete input {
-	width: 100%;
-	height: 100%;
-	background: none;
-	border: none;
-	cursor: pointer;
-}
 
 .create{
+	width: auto;
+	height: auto;
 	float: right;
-	background: rgb(60,60,60);
-	background-image: url("https://img.icons8.com/material-outlined/96/000000/new-file.png");
-	filter: invert(100%);
-	background-size: contain;
-}
-
-.create:hover{
-	background-color: rgb(100, 100, 100);
-	border-color: rgb(100, 100, 100);
+	font-size: 15px;
+	margin-top: 0;
+	margin-right: 10px;
 }

@@ -110,8 +110,6 @@ function EditPost(props){
           </div><br/>
           <label>Banner Image</label><br/>
           <input type="text" defaultValue={project.image} name="image" /><br/><br/> 
-          <label>Description</label>
-          <textarea type="text" defaultValue={project.description} name="description"/><br/><br/>
           <label>Index Summary</label>
           <textarea onChange={event=>setMdSummary(event.target.value)} type="text" defaultValue={project.index_summary} name="index_summary"/><br/>
           <ReactMarkdown>{mdSummary}</ReactMarkdown><br/>

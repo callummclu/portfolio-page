@@ -29,13 +29,9 @@ input[type=text] {
 }
 
 input[type=text]:focus{
-  border: 0;
-  border-bottom: 1px solid darkgray;
+
   outline: none;
   color: black;
-  border-color: green;
-  width: 500px;
-
 }
 
 hr {

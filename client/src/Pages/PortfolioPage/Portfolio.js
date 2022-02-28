@@ -41,7 +41,7 @@ function Portfolio(props){
       <Banner />
       <TextContainer content={
         <>
-          <h1> portfolio {auth ? <span><a href="portfolio/create"><div className="change-box create"></div></a></span> : <span></span>}</h1>
+          <h1> portfolio {auth ? <span><a href="portfolio/create"><div className="change-box create"><button>post</button></div></a></span> : <span></span>}</h1>
           <p>Here are some projects i've been working on over the past few months.<br/><br/> These posts will go into depth of technology choices aswell as show off the current state of the projects.<br/></p>
         </>
       }/>
