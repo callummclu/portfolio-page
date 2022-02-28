@@ -8,6 +8,7 @@ function Banner(props){
 		        <div className="name-container">
 		       		<h1 className="banner-text" style={props.style}> Callum McLuskey </h1>
 		       		<p className="banner-text">Aspiring Full Stack Engineer</p>
+
 		        </div>
 			</Link>
 		</div>
