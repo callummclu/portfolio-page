@@ -1,13 +1,14 @@
+
 body {
   margin: 0;
   font-family: 'helvetica', cursive;
-  background: rgb(242, 242, 242) !important;
-  color: rgb(60,60,60);
+  background: #f8f5f2;
+  color: #00473e;
 }
 
 a {
   text-decoration: none;
-  color: #77987C;
+  color: #f45d48;
 
 }
 
@@ -104,18 +105,35 @@ input:-webkit-autofill:active  {
   padding-left: 20px;
   padding-right: 20px;
   border-width: 2px;
-  background: white;
+  background: #f8f5f2 !important;
+  transition-duration: 0.25s;
 }
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px #f8f5f2 inset !important;
+}
+
+.auth-card input[type=email]:focus, 
+.auth-card input[type=password]:focus, 
+.auth-card input[type=name]:focus{
+  outline: none;
+}
+
 
 .auth-card label {
   position: absolute;
   margin-top: 10px;
   margin-left: 30px;
-  background: white;
+  background: #f8f5f2;
   padding-left: 5px;
   padding-right: 5px;
   min-width: auto;
   overflow-x: auto;
+  border-radius: 15px;
+
 }
 
 .submit-button{

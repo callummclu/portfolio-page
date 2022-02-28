@@ -134,15 +134,19 @@ function PortfolioItem(props){
             <br/>
             <span>{activity}</span>
             <ReactMarkdown>{project.content}</ReactMarkdown>
-            }
           </div>
+
+          
         }/>
+
         {figmaActive ? <LinkBox title="Figma" link={project.figma}/> : <></>}
         {githubActive ? <LinkBox title="Github" link={project.github}/> : <></>}
+        <br/>
+        <br/>
         </div>
     )  
   
-  return <Container divstyle={{backgroundColor: "rgba(240, 240, 240,0.9)"}} content={content} />
+  return <Container content={content} />
   } catch(e){
     return (<Error type="404" message="project not found"/>)
   }

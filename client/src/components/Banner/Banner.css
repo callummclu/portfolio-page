@@ -26,5 +26,21 @@
 
 .banner{
 		margin-bottom: 100px;
+		background: #f8f5f2;
+		width: 100vw;
+		margin-left: -12.5%;
+		height: 250px;
+		margin-top: -140px;
+		padding-top: 125px;
 
+}
+
+.banner-text{
+	color: #222525 !important;
+}
+
+.banner-text:last-child{
+	color: #078080 !important;
+	margin-top: -25px;
+	line-height: 0px;
 }

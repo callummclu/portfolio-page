@@ -34,5 +34,5 @@ export default function Register(){
       <p>Have An Account? <a href="/login">Login</a></p>
 		</div>
 	)
-	return <Container content={<TextContainer content={content}/>}/>
+	return <Container style={{minHeight:"100vh"}} content={<TextContainer content={content}/>}/>
 }

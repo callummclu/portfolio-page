@@ -15,7 +15,7 @@ function Sidebar(props){
 			<br/><br/>
 			<Link to="contact" onClick={() => toggleSidebar(!toggle)}>Contact</Link>
 			<br/><br/>
-			{auth ? <a style={{color:"lightgray"}} href="../../../API/account/logout">logout</a>:<a style={{color:"lightgray"}} href="../../../login">login</a>}
+			{auth ? <a href="../../../API/account/logout"><button>logout</button></a>:<a href="../../../login"><button>login</button></a>}
 		</div>
 	)
 }

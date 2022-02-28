@@ -1,5 +1,6 @@
 import Container from '../../components/container/Container'
 import TextContainer from '../../components/textContainer/TextContainer'
+import ProjectContainer from '../../components/ProjectContainer/ProjectContainer'
 import Banner from '../../components/Banner/Banner'
 import {Link} from 'react-router-dom'
 import React, { useState, useEffect } from 'react'
@@ -17,15 +18,23 @@ function RecentProjectContainer(){
       })
   },[])
 
+
   try{
-    const mostRecentProject = recentProject[recentProject.length - 1]
-    const link = '../../portfolio/' + mostRecentProject.slug_title
+    let recentProject_arr = []
+    console.log(recentProject.length)
+    for(let i = 0; i<recentProject.length; i++){
+      if(i === 3){
+        break
+      } else {
+        recentProject_arr.push(<ProjectContainer title={(recentProject[recentProject.length - (i+1)]).title} tags={(recentProject[recentProject.length - (i+1)]).tags} URL={'../../portfolio/' + (recentProject[recentProject.length - (i+1)]).slug_title} image={(recentProject[recentProject.length - (i+1)]).image}/>)
+      }
+    }
     const content_box = ( 
-        <div className="recent-project-container" style={{backgroundImage:`url(${mostRecentProject.image})`}}>
+        <div className="recent-project-container">
             <div>
-              <h3> {mostRecentProject.title }<span> <a href={link}>View Here</a></span></h3>
-              <p>{mostRecentProject.description || "no description written..."}</p>
+            <h1 className="heading-title"> Most Recent Project(s) </h1>
             </div>
+            <div>{recentProject_arr}</div>
         </div> 
     )
     return content_box
@@ -53,7 +62,7 @@ function Home(){
           <div><Link to="../../contact"><button className="home">Contact</button></Link></div>
         </div>
       </div>
-      <h2 className="heading-title"> My Most Recent Project </h2>
+      <br/><br/><br/><br/><br/>
       <RecentProjectContainer />
     </>
   )

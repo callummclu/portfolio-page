@@ -2,13 +2,14 @@
 	height: 100vh;
 	z-index: 4;
 	position: fixed;
-	background: white;
+	background: #fffffe;
 	transition-duration: 0.1s;
 	display: flex;
 	flex-wrap: wrap;
   	align-items: center;
   	justify-content: center;
   	flex-direction: column;
+
 }
 
 .sidebar.false{
@@ -26,15 +27,34 @@
 }
 
 .sidebar a{
-	color: rgb(60,60,60);
+	color: #222525;
 	text-decoration: none;
 	font-size: 20px;
+}
+
+.sidebar a:last-child{
+	color: white !important;
 }
 
 .sidebar a:hover {
 	color: rgb(160,160,160);
 }
 
+.sidebar button {
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 100%;
+	border: 0;
+	padding: 5px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-size: 20px;
+	padding: 10px;
+	background: #f8f5f2;
+	color: #222525 ;
+	cursor: pointer;
+}
 
 @media screen and (max-width: 600px){
 	.sidebar.true{

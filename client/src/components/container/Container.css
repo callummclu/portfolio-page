@@ -1,4 +1,5 @@
 .container.main{
+	background: white;
 }
 
 
@@ -8,5 +9,19 @@
 	padding: 100px;
 	padding-left: 10%;
 	padding-right: 10%;
-	padding-bottom: 50px;
+	padding-bottom: 0;
+}
+
+.container h1,
+.container h2,
+.container h3,
+.container h4,
+.container h5,
+.container h6 {
+	color: #232323 !important;
+}
+
+.container p,
+.container ul {
+	color:  #222525 !important;
 }

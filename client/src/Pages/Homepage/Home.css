@@ -2,12 +2,12 @@
 	width: 80%;
 	max-width: 350px;
 	height: 84px;
-	border: 3px solid #8BB792;
-	background: #8BB792;
+	border: 3px solid #078080;
+	background: #078080;
 	color: white;
 	margin: 10px;
 	font-size: 20px;
-	border-radius: 50px;
+	border-radius: 5px;
 }
 
 .home:hover{
@@ -47,28 +47,52 @@
 }
 
 .recent-project-container{
-	width: 100%;
+	width: 100vw;
+	margin-left: -10vw;
 	height: auto;
-	border-radius: 10px;
 	overflow: hidden;
 	background-size: cover;
 }
 
 .recent-project-container>div{
-	width: 100%;
+	width: 100vw;
 	height: 100%;
-	background: rgba(60, 60, 60, 0.9);
+	background: #feefe8;
 	padding: 25px;
+
 	padding-top: 10px;
+	margin: 0 auto;
 }
+
+.recent-project-container>div:last-child{
+	overflow-x: auto;
+	white-space: nowrap;
+	text-align: center;
+}
+
 .recent-project-container>div>*{
-	color: white;
+	color: #232323;
 	padding-right: 25px;
 
 }
 
 .recent-project-container>div>p{
+	color: #222525;
 	padding-right: 50px;
+}
+
+.recent-project-container button{
+	border: 0;
+	background: #078080;
+	padding: 5px;
+	padding-left: 10px;
+	padding-right: 10px;
+	border-radius: 5px;
+
+}
+
+.recent-project-container a {
+	color: white;
 }
 
 .recent-project-container>div>h3>span{

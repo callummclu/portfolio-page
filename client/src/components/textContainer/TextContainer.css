@@ -1,7 +1,6 @@
 .TextContainer{
-	border: 1px solid lightgray;
 	border-radius: 5px;
-	background: white;
+	background: #f8f5f2;
 	display: inline-block;
 	min-width: 300px;
 	overflow: hidden;
@@ -17,10 +16,15 @@
 }
 
 .TextContainer>*{
+	color:  #222525;
 	padding-left: 25px;
 	padding-right: 25px;
 	text-align: left;
 	word-wrap: break-word;
+}
+
+.TextContainer p {
+	color: #232323;
 }
 
 @media screen and (max-width: 300px){

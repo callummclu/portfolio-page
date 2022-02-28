@@ -31,5 +31,5 @@ export default function Login(){
 			<br/>
 		</div>
 	)
-	return <Container content={<TextContainer content={content}/>}/>
+	return <Container style={{minHeight:"100vh"}} content={<TextContainer content={content}/>}/>
 }
