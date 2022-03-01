@@ -8,7 +8,7 @@ import rehypeRaw from 'rehype-raw'
 
 
 
-export default function BlogItem(){
+export default function BlogItem(props){
 	let [blogPost,setBlogPost] = useState({})
 	const { id } = useParams()
 	useEffect(() => {
@@ -20,7 +20,7 @@ export default function BlogItem(){
 	}, [id])
 	const redirect_link = `/blog/${id}/edit`
 	try {
-		return <Container style={{minHeight:"100vh"}} content={<><Banner/><h1>{blogPost.title}</h1><button><a href={redirect_link}>edit</a></button><TextContainer content={<><ReactMarkdown rehypePlugins={[rehypeRaw]}>{blogPost.content}</ReactMarkdown><br/></>}/><br/><br/></>}/>
+		return <Container style={{minHeight:"100vh"}} content={<><Banner/><h1>{blogPost.title}</h1>{props.auth ? <button><a href={redirect_link}>edit</a> </button>: <></>}<TextContainer content={<><ReactMarkdown rehypePlugins={[rehypeRaw]}>{blogPost.content}</ReactMarkdown><br/></>}/><br/><br/></>}/>
 	} catch(err){
 		return <Container style={{minHeight:"100vh"}} content={<TextContainer content={<h1>post does not exist</h1>}/>}/>
 	}
