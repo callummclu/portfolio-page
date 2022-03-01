@@ -13,11 +13,11 @@ router.get('/logout',(req,res)=>{
 
 })
 
-// delete Account (NEEDS POTENTIAL FIXED AND TESTED)
-router.delete('/:id',async (req,res)=>{
+// delete Account
+router.delete('/',async (req,res)=>{
     try {
-        await req.user.remove()
-        res.redirect('./')
+        await User.deleteOne({_id:req.user._id})
+        res.redirect('../../..')
     } catch (err) {
         res.status(500).json({
             message:
@@ -27,6 +27,22 @@ router.delete('/:id',async (req,res)=>{
 })
 
 // edit Account (NEEDS ADDED)
+router.patch('/edit', (req,res)=>{
+    try{
+        let current_user = User.findOne({_id:req.user._id}).exec((err,user)=>{
+            user.email = req.body.email
+            user.name = req.body.name        
+            user.save()
+            res.redirect(`/account`)           
+        })
+
+    } catch (err){
+        res.status(500).json({
+            message:
+            err.message
+        })
+    }
+})
 
 
 // registers new user
@@ -68,7 +84,7 @@ router.post('/login',(req,res,next)=>{
 // returns if user is logged in, their permissions level, liked posts.
 router.get('/is_authenticated',(req,res)=>{
     if (req.user) {
-        res.json({message:true,permissions:req.user.permissions,likedposts:req.user.likedposts,name:req.user.name});
+        res.json({message:true,permissions:req.user.permissions,likedposts:req.user.likedposts,name:req.user.name,email:req.user.email});
     } else {
         res.json({
             message:false

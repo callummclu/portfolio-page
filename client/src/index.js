@@ -14,6 +14,7 @@ import Login from './Pages/login'
 import Register from './Pages/register'
 import Error from './Pages/Error'
 import AccountPage from './Pages/Account/Account'
+import EditAccount from './Pages/Account/EditAccount'
 
 // component imports
 import ScrollToTop from './ScrollToTop'
@@ -59,6 +60,7 @@ function App() {
               <Route path="login" element={<Login />}/>
               <Route path="register" element={<Register />}/>
               <Route path="account" element={<AccountPage/>}/>
+              <Route path="account/edit" element={<EditAccount/>}/>
               <Route path="*" element={<Error type="404" message="page not found"/> }/>
             </Routes>
           </ScrollToTop>

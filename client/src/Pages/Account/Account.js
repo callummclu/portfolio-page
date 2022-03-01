@@ -22,6 +22,9 @@ export default function AccountPage(){
     	  })
   	},[])   
 
+    const deletemethod = `../../API/account?_method=DELETE`
+
+
 	let content = <></>
 	try {
 
@@ -51,8 +54,10 @@ export default function AccountPage(){
 							</>
 						}/>
 						<h1> Account Settings </h1>
-						<p> Delete Account </p>
-						<p> Change Details </p>
+						<form action={deletemethod} method="POST">
+                          <input type="submit" value="Delete Account"/>
+                        </form><br/>
+						<a href="account/edit"> <button>Change Details </button></a>
 
 					</>
 			)			
