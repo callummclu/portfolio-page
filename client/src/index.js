@@ -13,6 +13,7 @@ import EditPost from './Pages/EditPost'
 import Login from './Pages/login'
 import Register from './Pages/register'
 import Error from './Pages/Error'
+import AccountPage from './Pages/Account/Account'
 
 // component imports
 import ScrollToTop from './ScrollToTop'
@@ -57,6 +58,7 @@ function App() {
               <Route path="portfolio/:id/edit" element={<EditPost auth={isAdmin}/>}/>
               <Route path="login" element={<Login />}/>
               <Route path="register" element={<Register />}/>
+              <Route path="account" element={<AccountPage/>}/>
               <Route path="*" element={<Error type="404" message="page not found"/> }/>
             </Routes>
           </ScrollToTop>

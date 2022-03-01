@@ -13,6 +13,22 @@ router.get('/logout',(req,res)=>{
 
 })
 
+// delete Account (NEEDS POTENTIAL FIXED AND TESTED)
+router.delete('/:id',async (req,res)=>{
+    try {
+        await req.user.remove()
+        res.redirect('./')
+    } catch (err) {
+        res.status(500).json({
+            message:
+            err.message
+        })
+    }
+})
+
+// edit Account (NEEDS ADDED)
+
+
 // registers new user
 router.post('/register',(req,res)=>{
 	const {name,email,password,password2} = req.body;
@@ -52,7 +68,7 @@ router.post('/login',(req,res,next)=>{
 // returns if user is logged in, their permissions level, liked posts.
 router.get('/is_authenticated',(req,res)=>{
     if (req.user) {
-        res.json({message:true,permissions:req.user.permissions,likedposts:req.user.likedposts});
+        res.json({message:true,permissions:req.user.permissions,likedposts:req.user.likedposts,name:req.user.name});
     } else {
         res.json({
             message:false
