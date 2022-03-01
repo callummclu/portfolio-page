@@ -33,7 +33,7 @@ export default function AccountPage(){
 			role = "admin"
 		}
 		let likedposts = []
-		for (let i = 1; i<(user.likedposts).length; i++){
+		for (let i = 0; i<(user.likedposts).length; i++){
 			likedposts.push(<><a href={"portfolio/"+user.likedposts[i]}>{(user.likedposts[i]).replace(/-/g," ")}</a><hr/></>)
 		}
 		if (user.message){

@@ -13,6 +13,8 @@ function Sidebar(props){
 			<br/><br/>
 			<Link to="portfolio" onClick={() => toggleSidebar(!toggle)}>Portfolio</Link>
 			<br/><br/>
+			<Link to="blog" onClick={() => toggleSidebar(!toggle)}>Blog</Link>
+			<br/><br/>
 			<Link to="contact" onClick={() => toggleSidebar(!toggle)}>Contact</Link>
 			<br/><br/>
 			{auth ? <><a style={{color: "darkgray"}} href="../../account">My Account</a><br/><br/><a href="../../../API/account/logout">logout</a></>:<a href="../../../login">login</a>}

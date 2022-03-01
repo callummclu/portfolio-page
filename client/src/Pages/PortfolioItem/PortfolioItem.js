@@ -10,6 +10,7 @@ import TextContainer from '../../components/textContainer/TextContainer'
 import IndexList from '../../components/IndexList/IndexList'
 import Error from '../Error'
 import LinkBox from '../../components/figma/Figma'
+import rehypeRaw from 'rehype-raw'
 
 function PortfolioItem(props){
 
@@ -127,13 +128,13 @@ function PortfolioItem(props){
               <p>{tagList}</p>
             </div>} />
           <br/><br/>
-          <IndexList content={<ReactMarkdown>{project.index_summary || `### ${project.title}\n---\n - content`}</ReactMarkdown>}/>
+          <IndexList content={<ReactMarkdown rehypePlugins={[rehypeRaw]}>{project.index_summary || `### ${project.title}\n---\n - content`}</ReactMarkdown>}/>
           <br/><br/>
           <TextContainer content={
           <div>
             <br/>
             <span>{activity}</span>
-            <ReactMarkdown>{project.content}</ReactMarkdown>
+            <ReactMarkdown rehypePlugins={[rehypeRaw]}>{project.content}</ReactMarkdown>
           </div>
 
           

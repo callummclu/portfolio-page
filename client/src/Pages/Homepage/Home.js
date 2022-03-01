@@ -59,7 +59,7 @@ function Home(){
       }/>
         <div className="button-container" >
           <div><Link to="../../portfolio"><button className="home">Portfolio</button></Link></div>
-          <div><Link to="../../contact"><button className="home">Contact</button></Link></div>
+          <div><Link to="../../blog"><button className="home">Blog</button></Link></div>
         </div>
       </div>
       <br/><br/><br/><br/><br/>

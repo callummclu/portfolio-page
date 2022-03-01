@@ -3,6 +3,7 @@ import Container from '../components/container/Container'
 import TextContainer from '../components/textContainer/TextContainer'
 import { useParams } from "react-router-dom";
 import ReactMarkdown from 'react-markdown'
+import rehypeRaw from 'rehype-raw'
 
 function EditPost(props){
   const { id } = useParams()
@@ -112,14 +113,14 @@ function EditPost(props){
           <input type="text" defaultValue={project.image} name="image" /><br/><br/> 
           <label>Index Summary</label>
           <textarea onChange={event=>setMdSummary(event.target.value)} type="text" defaultValue={project.index_summary} name="index_summary"/><br/>
-          <ReactMarkdown>{mdSummary}</ReactMarkdown><br/>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{mdSummary || project.index_summary}</ReactMarkdown><br/>
           <label>Github Link</label><br/>
           <input type="text" defaultValue={project.github} name="github"/><br/> <br/>
           <label>Figma Link</label><br/>
           <input type="text" defaultValue={project.figma} name="figma"/><br/><br/> 
           <label>Content</label><br/>
           <textarea onChange={event=>setMd(event.target.value)} type="text" defaultValue={project.content} name="content" /><br/><br/>
-          <ReactMarkdown>{md}</ReactMarkdown>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{md || project.content}</ReactMarkdown>
           <input type="submit" value="save changes"/>
         </form>
       </div>

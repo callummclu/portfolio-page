@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import Container from '../components/container/Container'
 import TextContainer from '../components/textContainer/TextContainer'
 import ReactMarkdown from 'react-markdown'
-
+import rehypeRaw from 'rehype-raw'
 
 export default function NewPost(props){
   const createmethod = `../../API/create`
@@ -18,7 +18,7 @@ export default function NewPost(props){
   
   /* conditional for not showing page if not authorised */
   let content = <></>
-  !(props.auth) ? content = (<><h1>404</h1><p>you do not have access to this page</p></>) : content = (
+  !(props.auth) ? content = (<><h1>404</h1><p>you do not have access to this page</p><br/></>) : content = (
     <div className="post">
         <h1> Create a post </h1>
         <form action={createmethod} method="POST">
@@ -48,7 +48,7 @@ export default function NewPost(props){
           {/* index input */}
           <label>Index Summary</label>
           <textarea onChange={event=>setMdSummary(event.target.value)} type="text" name="index_summary"/><br/>
-          <ReactMarkdown>{mdSummary}</ReactMarkdown><br/>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{mdSummary}</ReactMarkdown><br/>
 
           {/* Github Link input*/}
           <label>Github Link</label><br/>
@@ -61,7 +61,7 @@ export default function NewPost(props){
           {/* content input */}
           <label>content</label><br/>
           <textarea onChange={event=>setMd(event.target.value)} type="text" name="content"/><br/><br/> 
-          <ReactMarkdown>{md}</ReactMarkdown>
+          <ReactMarkdown rehypePlugins={[rehypeRaw]}>{md}</ReactMarkdown>
           
           {/* submit button */}
           <input type="submit" value="post"/>

@@ -2,10 +2,12 @@ const express = require('express')
 const router = express.Router()
 var slugify = require('slugify')
 const accountRouter = require('./account')
+const blogRouter = require('./blog')
 const User = require("../Models/users.js")
 
 // includes account route file.
 router.use('/account',accountRouter)
+router.use('/blog',blogRouter)
 
 const projectModel = require('../Models/project')
 
