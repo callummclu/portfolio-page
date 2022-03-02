@@ -16,7 +16,7 @@ Site aims to show off any projects I have undertaken
   - Editing and creating posts using Markdown for clean formatting
 - Ability for users to like posts and view their liked posts on their account page, from here also edit or delete account details
 
-### Planned Features
+# Planned Features
 
 - [x] blog posts
 - [ ] search functionality on both blog posts and portfolio posts
