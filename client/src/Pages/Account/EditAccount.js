@@ -24,9 +24,9 @@ function EditPost(props){
         <h1> Edit Account </h1>
         <form action={editmethod} method="POST">
           <label> Name </label><br/>
-          <input type="text" defaultValue={user.name} name="name" required/><br/><br/>
+          <input style={{width:"300px",maxWidth:"80%"}} type="text" defaultValue={user.name} name="name" required/><br/><br/>
           <label> Email </label><br/>
-          <input type="text" defaultValue={user.email} name="email" required/><br/><br/>
+          <input style={{width:"300px",maxWidth:"80%"}} type="text" defaultValue={user.email} name="email" required/><br/><br/>
           <input type="submit" value="save changes"/>
         </form>
       </div>
