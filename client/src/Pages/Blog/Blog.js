@@ -50,7 +50,8 @@ export default function Blog(props){
 						<form action={createmethod + '/' +blogPosts[i].slug_title +"?_method=DELETE"} method="POST">
 							<label><a href={"../../blog/" + blogPosts[i].slug_title}>{(blogPosts[i].slug_title).replaceAll('-',' ')}</a>{props.auth ? " - " : "" }</label>
 							{props.auth ?<input type="submit" value="delete"/> : <></>}
-						</form>					
+						</form>
+					<br/>					
 					<hr/>
 
 				</>
