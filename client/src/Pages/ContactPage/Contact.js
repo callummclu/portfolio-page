@@ -12,6 +12,8 @@ function Contact(){
   const content = (
     <>
       <Banner />
+      <a href="..">back</a>
+
       <TextContainer content={
         <>
           <h1>Contact</h1>

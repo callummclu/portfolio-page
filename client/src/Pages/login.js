@@ -9,6 +9,8 @@ export default function Login(){
 
 	const content = (
 		<div className="auth-card">
+		      <a href=".">back</a>
+
 			<h1> Login </h1>
 			<form action={createmethod} method="POST">
 				{/* email input */}

@@ -11,7 +11,7 @@ export default function Error(props){
 				<>
 					<h1>{errortype}</h1>
 					<p>{props.message}</p>
-					<a style={{color:"#078080"}} href="../../portfolio"><u>return to portfolio page</u></a>
+      				<a href=".">back</a>
 					<br/>
 					<br/>
 				</>

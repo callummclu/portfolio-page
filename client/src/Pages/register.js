@@ -6,6 +6,8 @@ export default function Register(){
 
 	const content = (
 		<div className="auth-card">
+          <a href=".">back</a>
+
       <h1>Register</h1>
       <form action={`../../API/account/register`} method="POST">
         <div>

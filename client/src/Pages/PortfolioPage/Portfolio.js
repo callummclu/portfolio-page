@@ -39,6 +39,7 @@ function Portfolio(props){
   const content = (
     <div className="portfolio-page">
       <Banner />
+      <a href="..">back</a>
       <TextContainer content={
         <>
           <h1> portfolio {auth ? <span><a href="portfolio/create"><div className="change-box create"><button>post</button></div></a></span> : <span></span>}</h1>

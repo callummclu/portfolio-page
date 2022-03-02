@@ -25,17 +25,25 @@ export default function Blog(props){
 		let posts_arr = []
 		if (blogPosts.length === 0){
 			posts_arr = <p>no blog posts here yet :(</p>
-		}
+		} else if (blogPosts.length === 1){
+			posts_arr = [<><form action={createmethod + '/' +blogPosts[0].slug_title +"?_method=DELETE"} method="POST">
+							<label><a href={"blog/" + blogPosts[0].slug_title}>{(blogPosts[0].slug_title).replaceAll('-',' ')}</a>{props.auth ? " - " : "" }</label>
+							{props.auth ?<input type="submit" value="delete"/> : <></>}
+						</form>		</>]
+		} else {
 		for(let i = 0; i<blogPosts.length; i++){
 			posts_arr.push(
 				<>
 						<form action={createmethod + '/' +blogPosts[i].slug_title +"?_method=DELETE"} method="POST">
-							<label><a href={"blog/" + blogPosts[i].slug_title}>{blogPosts[i].slug_title}</a>{props.auth ? " - " : "" }</label>
+							<label><a href={"blog/" + blogPosts[i].slug_title}>{(blogPosts[i].slug_title).replaceAll('-',' ')}</a>{props.auth ? " - " : "" }</label>
 							{props.auth ?<input type="submit" value="delete"/> : <></>}
 						</form>					
-					<br/>
+					<hr/>
+
 				</>
 			)
+		}
+		posts_arr.reverse()
 		}
 		{props.auth ? content = (
 			<>
@@ -54,5 +62,5 @@ export default function Blog(props){
 	} catch(err){
 		content = <><h1> Page Coming Soon </h1></>
 	}
-	return <Container style={{minHeight:"100vh"}} content={<><Banner/><TextContainer content={<><h1> Blog</h1><p>Browse Some blog posts ive written on current technologies.</p></>}/><br/><br/><TextContainer content={content}/></>}/>
+	return <Container style={{minHeight:"100vh"}} content={<><Banner/><a href="..">back</a><TextContainer content={<><h1> Blog</h1><p>Browse Some blog posts ive written on current technologies.</p></>}/><br/><br/><TextContainer content={<>{content} <></></>}/><br/><br/><br/><br/></>}/>
 }

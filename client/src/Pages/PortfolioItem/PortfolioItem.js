@@ -85,6 +85,7 @@ function PortfolioItem(props){
       let content = (
         <div>
           <Banner/>
+          <a href=".">back</a>
           <TextContainer content={
             <div>
               <h1>
