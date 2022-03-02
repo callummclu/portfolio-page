@@ -93,6 +93,33 @@ router.delete('/:id', getBlog, async (req,res)=>{
 	}
 })
 
+// like one blog post
+router.patch('/like/:id',getBlog, async (req,res)=>{
+	try{
+		if(req.user){
+			if(req.user.likedBlogposts.includes(req.params.id)){
+				console.log(res.blogPost,req.user);
+				(req.user.likedBlogposts).splice((req.user.likedBlogposts).indexOf(req.params.id),1)
+				await req.user.save()
+				res.blogPost.data.likes--
+				await res.blogPost.data.save()
+				res.redirect(`/blog/${req.params.id}`)
+			} else {
+				req.user.likedBlogposts.push(req.params.id)
+				await req.user.save()
+				res.blogPost.data.likes++
+				await res.blogPost.data.save()
+				res.redirect(`/blog/${req.params.id}`)					
+			}
+		} else {
+			res.redirect(`/login`)	
+		}
+
+	} catch (err){
+		res.status(400).json({message: err.message})		
+	}
+})
+
 async function getBlog(req,res,next){
 	let blogPost
 	try {

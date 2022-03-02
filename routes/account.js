@@ -84,7 +84,7 @@ router.post('/login',(req,res,next)=>{
 // returns if user is logged in, their permissions level, liked posts.
 router.get('/is_authenticated',(req,res)=>{
     if (req.user) {
-        res.json({message:true,permissions:req.user.permissions,likedposts:req.user.likedposts,name:req.user.name,email:req.user.email});
+        res.json({message:true,permissions:req.user.permissions,likedposts:req.user.likedposts,name:req.user.name,email:req.user.email,likedBlogposts:req.user.likedBlogposts});
     } else {
         res.json({
             message:false
