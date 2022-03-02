@@ -18,5 +18,5 @@ Site aims to show off any projects I have undertaken
 
 ### Planned Features
 
-[x] blog posts
-[] search functionality on both blog posts and portfolio posts
+- [x] blog posts
+- [ ] search functionality on both blog posts and portfolio posts
