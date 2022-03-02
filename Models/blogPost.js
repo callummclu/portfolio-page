@@ -15,6 +15,7 @@ var blogPost = new mongoose.Schema({
 		default: 0
 	},
 	index_summary: String,
+	author: String,
 });
 
 

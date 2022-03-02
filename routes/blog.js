@@ -35,6 +35,7 @@ router.post('/create', async (req,res) => {
 		content: req.body.content,
 		likes: 0,
 		index_summary: req.body.index_summary,
+		author: req.user.name
 	})
 	try {
 		const newBlogPost = await blog.save()
@@ -56,6 +57,7 @@ router.patch('/:id', getBlog, async (req,res)=>{
 	   		res.blogPost.data.image = req.body.image   
 			res.blogPost.data.content = req.body.content
 			res.blogPost.data.index_summary = req.body.index_summary
+			res.blogPost.data.author = req.user.name
 
 			await res.blogPost.data.save()
 			res.redirect(`/blog/${res.blogPost.data.slug_title}`)
