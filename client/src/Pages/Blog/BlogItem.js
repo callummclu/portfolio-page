@@ -20,7 +20,7 @@ export default function BlogItem(props){
 	}, [id])
 	const redirect_link = `/blog/${id}/edit`
 	try {
-		return <Container style={{minHeight:"100vh"}} content={<><Banner/><a href=".">back</a><h1>{blogPost.title}</h1>{props.auth ? <><button><a href={redirect_link}>edit</a> </button><br/><br/></>: <></>}<TextContainer content={<><ReactMarkdown rehypePlugins={[rehypeRaw]}>{blogPost.content}</ReactMarkdown><br/></>}/><br/><br/></>}/>
+		return <Container style={{minHeight:"100vh"}} content={<><Banner/><a href=".">back</a><h1>{blogPost.title}</h1>{props.auth ? <><button><a href={redirect_link}>edit</a> </button><br/><br/></>: <></>}<TextContainer content={<div style={{width:"calc(100% - 100px)",padding:"50px"}}><ReactMarkdown rehypePlugins={[rehypeRaw]}>{blogPost.content}</ReactMarkdown><br/></div>}/><br/><br/></>}/>
 	} catch(err){
 		return <Container style={{minHeight:"100vh"}} content={<TextContainer content={<><h1>post does not exist</h1><a href=".">back</a><br/><br/></>
 }/>}/>
