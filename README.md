@@ -20,3 +20,4 @@ Site aims to show off any projects I have undertaken
 
 - [x] blog posts
 - [ ] search functionality on both blog posts and portfolio posts
+- [ ] commenting on blog posts
