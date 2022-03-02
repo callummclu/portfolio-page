@@ -49,47 +49,69 @@ router.post('/create', async (req,res) => {
 		activity: req.body.activity,
 
 	})
-	try {
-		const newProject = await project.save()
-		res.redirect('../portfolio')
-	} catch (err) {
-		res.status(400).json({
-			message: "an error occured",
-			err
-		})
+	if(req.user.permissions === "2"){
+
+		try {
+			const newProject = await project.save()
+			res.redirect('../portfolio')
+		} catch (err) {
+			res.status(400).json({
+				message: "an error occured",
+				err
+			})
+		}
+	} else {
+		res.status(403).json({
+				message:
+				err.message
+			})
 	}
 })
 
 //delete one post
 router.delete('/:id', getProject, async (req,res)=>{
-	try {
-		await res.project.data.remove()
-		res.redirect('../portfolio')
-	} catch (err) {
-		res.status(500).json({
-			message:
-			err.message
-		})
+	if(req.user.permissions === "2"){
+		try {
+			await res.project.data.remove()
+			res.redirect('../portfolio')
+		} catch (err) {
+			res.status(500).json({
+				message:
+				err.message
+			})
+		}
+	} else {
+		res.status(403).json({
+				message:
+				err.message
+			})
 	}
 })
 
 // edit one post
 router.patch('/:id', getProject, async (req,res)=>{
-	try {
-		res.project.data.title = req.body.title
-		res.project.data.slug_title = slugify(req.body.title)
-   		res.project.data.image = req.body.image   
-		res.project.data.content = req.body.content
-		res.project.data.github = req.body.github
-		res.project.data.figma = req.body.figma
-		res.project.data.index_summary = req.body.index_summary
-		res.project.data.activity = req.body.activity
+	if(req.user.permissions === "2"){
+		try {
+			res.project.data.title = req.body.title
+			res.project.data.slug_title = slugify(req.body.title)
+	   		res.project.data.image = req.body.image   
+			res.project.data.content = req.body.content
+			res.project.data.github = req.body.github
+			res.project.data.figma = req.body.figma
+			res.project.data.index_summary = req.body.index_summary
+			res.project.data.activity = req.body.activity
 
 
-		await res.project.data.save()
-		res.redirect(`/portfolio/${req.params.id}`)
-	} catch (err) {
-		res.status(400).json({message: err.message})
+			await res.project.data.save()
+			res.redirect(`/portfolio/${req.params.id}`)
+		} catch (err) {
+			res.status(400).json({message: err.message})
+		}
+	} else {
+		res.status(403).json({
+				message:
+				err.message
+			})
 	}
 })
 

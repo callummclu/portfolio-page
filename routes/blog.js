@@ -49,29 +49,45 @@ router.post('/create', async (req,res) => {
 
 // EDIT ONE POST
 router.patch('/:id', getBlog, async (req,res)=>{
-	try {
-		res.blogPost.data.title = req.body.title
-		res.blogPost.data.slug_title = slugify(req.body.title)
-   		res.blogPost.data.image = req.body.image   
-		res.blogPost.data.content = req.body.content
-		res.blogPost.data.index_summary = req.body.index_summary
+	if(req.user.permissions === "2"){
+		try {
+			res.blogPost.data.title = req.body.title
+			res.blogPost.data.slug_title = slugify(req.body.title)
+	   		res.blogPost.data.image = req.body.image   
+			res.blogPost.data.content = req.body.content
+			res.blogPost.data.index_summary = req.body.index_summary
 
-		await res.blogPost.data.save()
-		res.redirect(`/blog/${res.blogPost.data.slug_title}`)
-	} catch (err) {
-		res.status(400).json({message: err.message})
+			await res.blogPost.data.save()
+			res.redirect(`/blog/${res.blogPost.data.slug_title}`)
+		} catch (err) {
+			res.status(400).json({message: err.message})
+		}
+	} else {
+		res.status(403).json({
+			message: "an error occured",
+			err
+		})
+
 	}
 })
 // DELETE ONE POST
 router.delete('/:id', getBlog, async (req,res)=>{
-	try {
-		await res.blogPost.data.remove()
-		res.redirect('../../../blog')
-	} catch (err) {
-		res.status(500).json({
-			message:
-			err.message
-		})
+	if(req.user.permissions === "2"){
+
+		try {
+			await res.blogPost.data.remove()
+			res.redirect('../../../blog')
+		} catch (err) {
+			res.status(500).json({
+				message:
+				err.message
+			})
+		}
+	} else {
+		res.status(403).json({
+			message: "an error occured",
+			err
+		})		
 	}
 })
 
