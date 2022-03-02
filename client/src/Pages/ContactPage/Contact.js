@@ -8,11 +8,23 @@ function Contact(){
   const email_icon = "https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/256/000000/external-email-interface-kiranshastry-lineal-kiranshastry.png"
   const github_icon = "https://img.icons8.com/glyph-neue/256/000000/github.png"
   const linkedIn_icon = "https://img.icons8.com/ios/200/000000/linkedin.png"
+  let breadcrumbs = (window.location.href).split('/').splice(1).splice(1).splice(1)
+  breadcrumbs.unshift('home')
 
+  let breadcrumbs_arr = []
+  let breadcrumbs_link = ""
+  for (let i = 0; i<breadcrumbs.length;i++){
+    breadcrumbs_link = "../../../../../"
+    for(let j = 0; j<i; j++){
+      breadcrumbs_link += breadcrumbs[j+1]+'/'
+      
+    }
+    breadcrumbs_arr.push(<a className="breadcrumb" href={breadcrumbs_link}>{breadcrumbs[i]}</a>)
+  }
   const content = (
     <>
       <Banner />
-      <a href="..">back</a>
+      {breadcrumbs_arr}
 
       <TextContainer content={
         <>
