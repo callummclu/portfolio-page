@@ -20,11 +20,24 @@ export default function EditBlogItem(props){
           setBlogPost(responseJson.data)
         })
   }, [id])
+    let breadcrumbs = (window.location.href).split('/').splice(1).splice(1).splice(1)
+  breadcrumbs.unshift('home')
 
+  let breadcrumbs_arr = []
+  let breadcrumbs_link = ""
+  for (let i = 0; i<breadcrumbs.length;i++){
+    breadcrumbs_link = "../../../../../"
+    for(let j = 0; j<i; j++){
+      breadcrumbs_link += breadcrumbs[j+1]+'/'
+      
+    }
+    breadcrumbs_arr.push(<a className="breadcrumb" href={breadcrumbs_link}>{breadcrumbs[i]}</a>)
+  }
 
     let content = (
 
     <div className="post">
+      {breadcrumbs_arr}
         <h1> Edit Blog Post </h1>
         <form action={createmethod  +blogPost.slug_title +"?_method=PATCH"} method="POST">
           <label> Title </label><br/>

@@ -18,9 +18,22 @@ export default function BlogItem(props){
 	        setBlogPost(responseJson.data)
 	      })
 	}, [id])
+  let breadcrumbs = (window.location.href).split('/').splice(1).splice(1).splice(1)
+  breadcrumbs.unshift('home')
+
+  let breadcrumbs_arr = []
+  let breadcrumbs_link = ""
+  for (let i = 0; i<breadcrumbs.length;i++){
+    breadcrumbs_link = "../../../../../"
+    for(let j = 0; j<i; j++){
+      breadcrumbs_link += breadcrumbs[j+1]+'/'
+      
+    }
+    breadcrumbs_arr.push(<a className="breadcrumb" href={breadcrumbs_link}>{breadcrumbs[i]}</a>)
+  }
 	const redirect_link = `/blog/${id}/edit`
 	try {
-		return <Container style={{minHeight:"100vh"}} content={<><Banner/><a href=".">back</a><h1>{blogPost.title}</h1>{props.auth ? <><button><a href={redirect_link}>edit</a> </button><br/><br/></>: <></>}<TextContainer content={<div style={{width:"calc(100% - 100px)",padding:"50px"}}><ReactMarkdown rehypePlugins={[rehypeRaw]}>{blogPost.content}</ReactMarkdown><br/></div>}/><br/><br/></>}/>
+		return <Container style={{minHeight:"100vh"}} content={<><Banner/>{breadcrumbs_arr}<h1>{blogPost.title}</h1>{props.auth ? <><button><a href={redirect_link}>edit</a> </button><br/><br/></>: <></>}<TextContainer content={<div style={{width:"calc(100% - 100px)",padding:"50px"}}><ReactMarkdown rehypePlugins={[rehypeRaw]}>{blogPost.content}</ReactMarkdown><br/></div>}/><br/><br/></>}/>
 	} catch(err){
 		return <Container style={{minHeight:"100vh"}} content={<TextContainer content={<><h1>post does not exist</h1><a href=".">back</a><br/><br/></>
 }/>}/>

@@ -19,6 +19,19 @@ export default function Blog(props){
 	        setBlogPosts(responseJson.data)
 	      })
 	}, [])
+	  let breadcrumbs = (window.location.href).split('/').splice(1).splice(1).splice(1)
+  breadcrumbs.unshift('home')
+
+  let breadcrumbs_arr = []
+  let breadcrumbs_link = ""
+  for (let i = 0; i<breadcrumbs.length;i++){
+    breadcrumbs_link = "../../../../../"
+    for(let j = 0; j<i; j++){
+      breadcrumbs_link += breadcrumbs[j+1]+'/'
+      
+    }
+    breadcrumbs_arr.push(<a className="breadcrumb" href={breadcrumbs_link}>{breadcrumbs[i]}</a>)
+  }
 	let content = <></>
 
 	try{
@@ -27,7 +40,7 @@ export default function Blog(props){
 			posts_arr = <p>no blog posts here yet :(</p>
 		} else if (blogPosts.length === 1){
 			posts_arr = [<><form action={createmethod + '/' +blogPosts[0].slug_title +"?_method=DELETE"} method="POST">
-							<label><a href={"blog/" + blogPosts[0].slug_title}>{(blogPosts[0].slug_title).replaceAll('-',' ')}</a>{props.auth ? " - " : "" }</label>
+							<label><a href={"../../blog/" + blogPosts[0].slug_title}>{(blogPosts[0].slug_title).replaceAll('-',' ')}</a>{props.auth ? " - " : "" }</label>
 							{props.auth ?<input type="submit" value="delete"/> : <></>}
 						</form>		</>]
 		} else {
@@ -35,7 +48,7 @@ export default function Blog(props){
 			posts_arr.push(
 				<>
 						<form action={createmethod + '/' +blogPosts[i].slug_title +"?_method=DELETE"} method="POST">
-							<label><a href={"blog/" + blogPosts[i].slug_title}>{(blogPosts[i].slug_title).replaceAll('-',' ')}</a>{props.auth ? " - " : "" }</label>
+							<label><a href={"../../blog/" + blogPosts[i].slug_title}>{(blogPosts[i].slug_title).replaceAll('-',' ')}</a>{props.auth ? " - " : "" }</label>
 							{props.auth ?<input type="submit" value="delete"/> : <></>}
 						</form>					
 					<hr/>
@@ -62,5 +75,5 @@ export default function Blog(props){
 	} catch(err){
 		content = <><h1> Page Coming Soon </h1></>
 	}
-	return <Container style={{minHeight:"100vh"}} content={<><Banner/><a href="..">back</a><TextContainer content={<><h1> Blog</h1><p>Browse Some blog posts ive written on current technologies.</p></>}/><br/><br/><TextContainer content={<>{content} <></></>}/><br/><br/><br/><br/></>}/>
+	return <Container style={{minHeight:"100vh"}} content={<><Banner/>{breadcrumbs_arr}<TextContainer content={<><h1> Blog</h1><p>Browse Some blog posts ive written on current technologies.</p></>}/><br/><br/><TextContainer content={<>{content} <></></>}/><br/><br/><br/><br/></>}/>
 }

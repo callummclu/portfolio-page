@@ -40,6 +40,20 @@ function PortfolioItem(props){
         setUser(responseJson)
       })
   },[])   
+  let breadcrumbs = (window.location.href).split('/').splice(1).splice(1).splice(1)
+  breadcrumbs.unshift('home')
+
+  let breadcrumbs_arr = []
+  let breadcrumbs_link = ""
+  for (let i = 0; i<breadcrumbs.length;i++){
+    breadcrumbs_link = "../../../../../"
+    for(let j = 0; j<i; j++){
+      breadcrumbs_link += breadcrumbs[j+1]+'/'
+      
+    }
+    breadcrumbs_arr.push(<a className="breadcrumb" href={breadcrumbs_link}>{breadcrumbs[i]}</a>)
+  }
+
   let activity = <></>
   try {
       let figmaActive = false
@@ -85,7 +99,8 @@ function PortfolioItem(props){
       let content = (
         <div>
           <Banner/>
-          <a href=".">back</a>
+          {breadcrumbs_arr}
+          
           <TextContainer content={
             <div>
               <h1>

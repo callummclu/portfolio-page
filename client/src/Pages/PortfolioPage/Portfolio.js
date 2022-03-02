@@ -35,11 +35,24 @@ function PortfolioList(props){
 function Portfolio(props){
 
   const auth = props.auth
+  let breadcrumbs = (window.location.href).split('/').splice(1).splice(1).splice(1)
+  breadcrumbs.unshift('home')
 
+  let breadcrumbs_arr = []
+  let breadcrumbs_link = ""
+  for (let i = 0; i<breadcrumbs.length;i++){
+    breadcrumbs_link = "../../../../../"
+    for(let j = 0; j<i; j++){
+      breadcrumbs_link += breadcrumbs[j+1]+'/'
+      
+    }
+    breadcrumbs_arr.push(<a className="breadcrumb" href={breadcrumbs_link}>{breadcrumbs[i]}</a>)
+  }
   const content = (
     <div className="portfolio-page">
       <Banner />
-      <a href="..">back</a>
+      {breadcrumbs_arr}
+          
       <TextContainer content={
         <>
           <h1> portfolio {auth ? <span><a href="portfolio/create"><div className="change-box create"><button>post</button></div></a></span> : <span></span>}</h1>

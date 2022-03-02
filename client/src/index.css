@@ -140,3 +140,14 @@ input:-webkit-autofill:active{
 .submit-button:hover{
   background: lightgray;
 }
+
+.breadcrumb{
+  color: lightgray !important;
+}
+.breadcrumb::before{
+  content: "/";
+  color: lightgray;
+}
+.breadcrumb:hover{
+  color: gray !important;
+}
