@@ -34,7 +34,11 @@ export default function AccountPage(){
 		}
 		let likedposts = []
 		for (let i = 0; i<(user.likedposts).length; i++){
-			likedposts.push(<><a href={"portfolio/"+user.likedposts[i]}>{(user.likedposts[i]).replace(/-/g," ")}</a><hr/></>)
+			likedposts.push(<><a href={"portfolio/"+user.likedposts[i]}>{(user.likedposts[i]).replace(/-/g," ")}</a><br/><br/><hr/></>)
+		}
+		let likedBlogposts = []
+		for (let i = 0; i<(user.likedBlogposts).length; i++){
+			likedBlogposts.push(<><a href={"blog/"+user.likedBlogposts[i]}>{(user.likedBlogposts[i]).replace(/-/g," ")}</a><br/><br/><hr/></>)
 		}
 		if (user.message){
 			content = (
@@ -48,9 +52,14 @@ export default function AccountPage(){
 						<br/><br/>
 						<TextContainer content = {
 							<>
-								<h1> Liked Posts </h1>
+								<h1> Liked Portfolio Posts </h1>
 								<br/>
 								<p>{likedposts}</p>
+								
+								
+								<h1> Liked Blog Posts </h1>
+								<br/>
+								<p>{likedBlogposts}</p>								
 							</>
 						}/>
 						<h1> Account Settings </h1>
