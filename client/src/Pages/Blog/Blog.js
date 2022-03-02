@@ -47,13 +47,17 @@ export default function Blog(props){
 		for(let i = 0; i<blogPosts.length; i++){
 			posts_arr.push(
 				<>
+					<TextContainer content={
+						<>
+						<br/>
 						<form action={createmethod + '/' +blogPosts[i].slug_title +"?_method=DELETE"} method="POST">
-							<label><a href={"../../blog/" + blogPosts[i].slug_title}>{(blogPosts[i].slug_title).replaceAll('-',' ')}</a>{props.auth ? " - " : "" }</label>
+							<label><a href={"../../blog/" + blogPosts[i].slug_title}>{(blogPosts[i].slug_title).replaceAll('-',' ')}</a><span style={{float:"right", color:'darkgray'}}>{blogPosts[i].author}</span>{props.auth ? " - " : "" }</label>
 							{props.auth ?<input type="submit" value="delete"/> : <></>}
 						</form>
-					<br/>					
-					<hr/>
-
+						<br/>
+						</>
+					}/>
+					<br/><br/>
 				</>
 			)
 		}
@@ -76,5 +80,5 @@ export default function Blog(props){
 	} catch(err){
 		content = <><h1> Page Coming Soon </h1></>
 	}
-	return <Container style={{minHeight:"100vh"}} content={<><Banner/>{breadcrumbs_arr}<TextContainer content={<><h1> Blog</h1><p>Browse Some blog posts ive written on current technologies.</p></>}/><br/><br/><TextContainer content={<>{content} <></></>}/><br/><br/><br/><br/></>}/>
+	return <Container style={{minHeight:"100vh"}} content={<><Banner/>{breadcrumbs_arr}<TextContainer content={<><h1> Blog</h1><p>Browse Some blog posts ive written on current technologies.</p></>}/><br/><br/>{content}<br/><br/><br/><br/></>}/>
 }
