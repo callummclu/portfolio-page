@@ -32,6 +32,7 @@ export default function StackPage(){
 					<br/><br/><br/><br/>
 					<div className="tags">
 						<div><span>Python</span></div>
+						<div><span>Numpy</span></div>
 						<div><span>Scipy</span></div>
 						<div><span>Pandas</span></div>
 						<div><span>Django</span></div>
