@@ -155,3 +155,27 @@ input:-webkit-autofill:active{
 p.author{
   color: darkgray !important;
 }
+
+.tags{
+  text-align: center;
+  width: 75%;
+  margin: 0 auto;
+}
+
+.tags>div{
+  font-size: 12px;
+  margin-left: 10px;
+  display:inline-block;
+  padding:5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 20px;
+  background:darkgray;
+  color:white;
+  margin: 5px;
+}
+
+.tags>div:hover{
+  background: #f45d48;  
+  cursor: default;
+}
