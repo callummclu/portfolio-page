@@ -7,7 +7,7 @@ function Banner(props){
 			<Link to="../../">
 		        <div className="name-container">
 		       		<h1 className="banner-text" style={props.style}> Callum McLuskey </h1>
-		       		<p className="banner-text">Aspiring Full Stack Engineer</p>
+		       		<p className="banner-text">Itern Full Stack Engineer @ Evata</p>
 
 		        </div>
 			</Link>
