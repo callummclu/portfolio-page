@@ -8,7 +8,7 @@ function Banner(props){
 		        <div className="name-container">
 		       		<h1 className="banner-text" style={props.style}> Callum McLuskey </h1>
 		       		<p className="banner-text">
-		       			Intern Full Stack Engineer | Evata
+		       			Software Developer | Guitarguitar
 		       		</p>
 
 		        </div>
